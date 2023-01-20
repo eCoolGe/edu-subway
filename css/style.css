@@ -1,41 +1,117 @@
 body {
-    background-color: #ecebe9;
-    font-family: "Arial";
+    /*background-color: #ecebe9;*/
+    background-image: url("../assets/bg.jpg");
+    font-family: 'Roboto', sans-serif;
     color: #444444;
 }
 
 .main-text {
     text-align: center;
-    font-size: 50px;
+    font-size: 35px;
+    font-weight: 700;
     padding-top: 20px;
 }
 
 .navbar {
-    width: 250px;
+    width: 220px;
     position: fixed;
     z-index: 1;
-    top: 50px;
-    left: 10px;
+    top: 110px;
+    left: 260px;
     background: #fff;
     overflow-x: hidden;
-    padding: 8px 0;
+    border-radius: 5px;
+    box-shadow: 0 0 3px;
 }
 
 .navbar a {
-    padding: 6px 8px 6px 16px;
+    padding: 12px 4px 12px 12px;
     text-align: center;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 15px;
+    font-weight: 700;
     color: #444444;
     display: block;
 }
 
 .navbar a:hover {
-    color: #064579;
+    background-color: #f6d000;
+    color: #fff;
+}
+
+.cart {
+    width: 220px;
+    position: fixed;
+    z-index: 1;
+    top: 440px;
+    left: 260px;
+    background: #fff;
+    overflow-x: hidden;
+    border-radius: 5px;
+    box-shadow: 0 0 3px;
+}
+
+.cart__header {
+    padding: 5px 0 5px 0;
+    background-color: #f5c300;
+    display: flex;
+}
+
+.cart__header > svg {
+    fill: #fff;
+    height: 40px;
+    width: 40px;
+    margin: 10px auto;
+    -webkit-filter: drop-shadow(0 0 3px rgba(0,0,0,30%));
+    filter: drop-shadow(0 0 3px rgba(0,0,0,30%));
+}
+
+.cart__header > h1 {
+    color: #fff;
+    font-size: 36px;
+    font-weight: 500;
+    margin: 10px 10px 5px 0;
+    text-shadow: 0 0 3px rgba(0,0,0,30%);
+    /*font-family: "Courier New", serif;*/
+}
+
+.cart__body {
+    background-color: #f6d846;
+    text-align: center;
+}
+
+.cart__body > p {
+    text-align: center;
+    font-weight: 700;
+    margin: 15px 0 20px 0;
+}
+
+.cart__body > button {
+    font-weight: 700;
+    color: #fff;
+    background-color: #808080;
+    text-shadow: 1px 1px 1px rgba(0 0 0 / 50%);
+    box-shadow: 0 2px 0 rgb(0 0 0 / 60%);
+    border-radius: 3px;
+    border-width: 0;
+    padding: 7px 15px;
+    margin: 0 0 25px 0;
+    font-size: 14px;
+}
+
+.cart__body__subtitle {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0 6px 0;
+    margin: 0 14px;
+    border-bottom: 2px solid #f4b200;
+    font-weight: 700;
+    font-size: 13px;
 }
 
 .main {
-    margin-left: 140px; /* Same width as the sidebar + left position in px */
+    margin-top: 50px;
+    margin-left: 500px; /* Same width as the sidebar + left position in px */
     font-size: 28px; /* Increased text to enable scrolling */
-    padding: 0px 10px;
+    padding: 0 10px;
 }
