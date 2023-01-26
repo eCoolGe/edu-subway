@@ -118,7 +118,7 @@ body {
     padding: 0 10px;
     display: grid;
     grid-template-columns: 250px 250px 250px;
-    grid-template-rows: 500px 500px 500px 500px 500px;
+    grid-template-rows: 500px 500px 500px 500px 500px 500px;
 }
 
 .item {
@@ -149,6 +149,7 @@ body {
     -moz-border-radius: 25px;
     border-radius: 100px;
     background: #fff;
+    overflow: hidden;
 
     position: absolute;
     top: 0;
@@ -162,9 +163,32 @@ body {
 }
 
 .item__name {
+    width: 230px;
+    margin: 0 auto 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+}
+
+.item__name:hover {
+    white-space: normal;
+    overflow: auto;
+}
+
+.item__name > p {
     font-size: 20px;
     font-weight: 700;
+    display: inline;
+}
+
+.item__name:hover > p {
+    display: block;
     margin: 8px auto;
+}
+
+.item__name:hover ~ .item__counter-block {
+    display: none;
 }
 
 .item__desc {

@@ -1,19 +1,37 @@
-fetch("../assets/data.json")
-    .then(response => response.json())
-    .then(data => {
-        console.log(data.menu);
-        for (let i = 0; i < data.menu.length; i++) {
-            if (data.menu[i].category === "sandwiches") {
-                document.querySelector(".product-list").innerHTML +=
-                    `
+const pageContentRender = () => {
+    let pageName = event.target.id
+
+    fetch("../assets/data.json")
+        .then(response => response.json())
+        .then(data => {
+            document.querySelector(".product-list").innerHTML = ""
+            for (let i = 0; i < data.menu.length; i++) {
+                if (data.menu[i].category === pageName) {
+                    let marketImage;
+                    switch (data.menu[i].market) {
+                        case "subway":
+                            marketImage = data.markets.subway.image
+                            break;
+                        case "sfc":
+                            marketImage = data.markets.sfc.image
+                            break;
+                        case "doner":
+                            marketImage = data.markets.doner.image
+                            break;
+
+                    }
+                    document.querySelector(".product-list").innerHTML +=
+                        `
                         <article class="item">
-                            <img class="item__shop-logo" src="${data.markets.subway.image}" alt="">
+                            <img class="item__shop-logo" src="${marketImage}" alt="">
                             <div class="item__outer-circle">
                                 <div class="item__inner-circle">
                                     <img src="${data.menu[i].image}" alt="">
                                 </div>
                             </div>
-                            <p class="item__name">${data.menu[i].name}</p>
+                            <div class="item__name">
+                                <p>${data.menu[i].name}</p>
+                            </div>
                             <div class="item__desc">
                                 <p>${data.menu[i].description}</p>
                             </div>
@@ -31,6 +49,7 @@ fetch("../assets/data.json")
                             </div>
                         </article>
                     `;
+                }
             }
-        }
-    })
+        })
+}
