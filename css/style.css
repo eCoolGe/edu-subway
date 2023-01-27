@@ -34,9 +34,9 @@ body {
     display: block;
 }
 
-.navbar a:hover {
+.navbar a:hover, .navbar_selected {
     background-color: #f6d000;
-    color: #fff;
+    color: #fff!important;
 }
 
 .cart {

@@ -1,5 +1,11 @@
-const pageContentRender = () => {
-    let pageName = event.target.id
+const pageContentRender = (target) => {
+    let pageName = target.id
+    let childrensParentNav = target.parentElement.children
+
+    for(let i = 0; i < childrensParentNav.length; i++) {
+        childrensParentNav[i].classList.remove("navbar_selected")
+    }
+    target.classList.add("navbar_selected")
 
     fetch("../assets/data.json")
         .then(response => response.json())
