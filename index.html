@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="modal-open">
 
 <header class="main-text">СДЕЛАЙТЕ ЗАКАЗ НАПРЯМУЮ ИЗ РЕСТОРАНА</header>
 <section class="left-menu">
@@ -57,9 +57,34 @@
     </div>
 </section>
 
+<div class="hystmodal hystmodal--active" id="myModal" aria-hidden="true">
+    <div class="hystmodal__wrap">
+        <div class="hystmodal__window" role="dialog" aria-modal="true">
+            <div class="hystmodal__header">
+                Выберите размер сендвича
+<!--                Проверьте и добавьте в корзину-->
+<!--                <button data-hystclose class="hystmodal__close">Close</button>-->
+            </div>
+            <ul class="hystmodal__stages">
+                <li class="active">Размер</li>
+                <li>Хлеб</li>
+                <li>Овощи</li>
+                <li>Соусы</li>
+                <li>Начинка</li>
+                <li>Готово!</li>
+            </ul>
+        </div>
+        <div>eCoolGe</div>
+    </div>
+</div>
+<div class="hystmodal__shadow hystmodal__shadow--show"></div>
+
+
 <section class="product-list">
 
 </section>
+
+
 
 <script src="js/pageContentRender.js"></script>
 
