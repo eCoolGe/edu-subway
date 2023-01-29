@@ -1,4 +1,5 @@
 const pageContentRender = (target) => {
+    // console.log(event.target)
     let pageName = target.id
     let childrensParentNav = target.parentElement.children
 
