@@ -29,6 +29,7 @@ const pageContentRender = (target) => {
                             break;
 
                     }
+                    let inCart = cart.some(item => item.itemName === data.menu[i].name)
                     document.querySelector(".product-list").innerHTML +=
                         `
                         <article class="item">
@@ -50,19 +51,22 @@ const pageContentRender = (target) => {
                                 <div class="counter-block__counter">
                                     <span onclick="counterDecrement(this)" class="counter__minus">—</span>
                                     <label>
-                                        <input oninput="counterChange(this)" type="text" value="1"/>
+                                        <input 
+                                        oninput="counterChange(this)" 
+                                        type="text" 
+                                        value="${inCart ? cart[cart.findIndex(item => item.itemName === data.menu[i].name)].itemCount : '1'}"/>
                                     </label>
                                     <span onclick="counterIncrement(this)" class="counter__plus">+</span>
                                 </div>
                                 
                                 <button 
-                                ${cart.includes(data.menu[i].name) 
+                                ${inCart
                                     ? `class="active"` 
                                     : ``
                                 }
                                 onclick="cartAdd(this)"
                                 >
-                                ${cart.includes(data.menu[i].name) 
+                                ${inCart
                                     ? `УБРАТЬ` 
                                     : `В КОРЗИНУ`
                                 }
@@ -76,17 +80,17 @@ const pageContentRender = (target) => {
 }
 
 const cartAdd = (target) => {
-    let itemName = target.parentElement.parentElement.getElementsByClassName('item__name')[0].children[0].textContent
+    let item = target.parentElement.parentElement
+    let itemName = item.getElementsByClassName('item__name')[0].children[0].textContent
+    let itemCount = item.getElementsByClassName('counter-block__counter')[0]
+        .getElementsByTagName('input')[0].value
 
-    if (!cart.includes(itemName)) {
-        cart.push(itemName)
+    if (!cart.some(item => item.itemName === itemName)) {
+        cart.push({'itemName': itemName, 'itemCount': itemCount})
         target.classList.add('active')
         target.innerHTML = "УБРАТЬ"
     } else {
-        const index = cart.indexOf(itemName);
-        if (index > -1) {
-            cart.splice(index, 1);
-        }
+        cart.splice(cart.findIndex(item => item.itemName === itemName), 1)
         target.classList.remove('active')
         target.innerHTML = "В КОРЗИНУ"
     }
