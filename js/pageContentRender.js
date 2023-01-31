@@ -1,51 +1,43 @@
+const JSON_PATH = "../assets/data.json";
 let cart = [];
 
 const pageContentRender = (target) => {
+    let pageName = target.id
+    let navChildren = target.parentElement.children
 
-    let pageName = target.id // or event.target
-    let childrensParentNav = target.parentElement.children
-
-    for(let i = 0; i < childrensParentNav.length; i++) {
-        childrensParentNav[i].classList.remove("navbar_selected")
+    for (let i = 0; i < navChildren.length; i++) {
+        navChildren[i].classList.remove("navbar_selected")
     }
     target.classList.add("navbar_selected")
 
-    fetch("../assets/data.json")
-        .then(response => response.json())
-        .then(data => {
-            document.querySelector(".product-list").innerHTML = ""
-            for (let i = 0; i < data.menu.length; i++) {
-                if (data.menu[i].category === pageName) {
-                    let marketImage;
-                    switch (data.menu[i].market) {
-                        case "subway":
-                            marketImage = data.markets.subway.image
-                            break;
-                        case "sfc":
-                            marketImage = data.markets.sfc.image
-                            break;
-                        case "doner":
-                            marketImage = data.markets.doner.image
-                            break;
+    getJSON(JSON_PATH).then(data => {
+        let productsList = document.querySelector(".product-list")
 
-                    }
-                    let inCart = cart.some(item => item.itemName === data.menu[i].name)
-                    document.querySelector(".product-list").innerHTML +=
-                        `
+        productsList.innerHTML = ""
+
+        for (let i = 0; i < data.menu.length; i++) {
+            let product = data.menu[i]
+
+            if (product.category === pageName) {
+                let marketImage = data.markets[product.market]?.image
+                let inCart = cart.some(item => item.itemName === product.name)
+
+                productsList.innerHTML +=
+                    `
                         <article class="item">
                         ${marketImage ? `<img class="item__shop-logo" src="${marketImage}" alt="">` : ``}                   
                             <div class="item__outer-circle">
                                 <div class="item__inner-circle">
-                                    <img src="${data.menu[i].image}" alt="">
+                                    <img src="${product.image}" alt="">
                                 </div>
                             </div>
                             <div class="item__name">
-                                <p>${data.menu[i].name}</p>
+                                <p>${product.name}</p>
                             </div>
                             <div class="item__desc">
-                                <p>${data.menu[i].description}</p>
+                                <p>${product.description}</p>
                             </div>
-                            <p class="item__price">Цена: <span>${data.menu[i].price}</span> ₽</p>
+                            <p class="item__price">Цена: <span>${product.price}</span> ₽</p>
                             <div class="item__counter-block noselect">
                                 <p>КОЛИЧЕСТВО</p>
                                 <div class="counter-block__counter">
@@ -54,87 +46,41 @@ const pageContentRender = (target) => {
                                         <input 
                                         oninput="counterChange(this)" 
                                         type="text" 
-                                        value="${inCart ? cart[cart.findIndex(item => item.itemName === data.menu[i].name)].itemCount : '1'}"/>
+                                        value="${inCart ? cart[cart.findIndex(item => item.itemName === product.name)].itemCount : '1'}"/>
                                     </label>
                                     <span onclick="counterIncrement(this)" class="counter__plus">+</span>
                                 </div>
                                 
                                 <button 
-                                ${inCart
-                                    ? `class="active"` 
-                                    : ``
-                                }
-                                onclick="cartAdd(this)"
+                                    ${inCart
+                                        ? `class="active"`
+                                        : ``
+                                    }
+                                    onclick="cartAdd(this)"
                                 >
                                 ${inCart
-                                    ? `УБРАТЬ` 
+                                    ? `УБРАТЬ`
                                     : `В КОРЗИНУ`
                                 }
                                 </button>
                             </div>
                         </article>
                     `;
-                }
             }
-        })
-}
-
-const cartAdd = (target) => {
-    let item = target.parentElement.parentElement
-    let itemName = item.getElementsByClassName('item__name')[0].children[0].textContent
-    let itemCount = item.getElementsByClassName('counter-block__counter')[0]
-        .getElementsByTagName('input')[0].value
-    let itemPrice = item.getElementsByClassName('item__price')[0].getElementsByTagName('span')[0].textContent
-    let priceHolder = document.querySelector('#cartPrice')
-
-
-    if (!cart.some(item => item.itemName === itemName)) {
-        cart.push({'itemName': itemName, 'itemCount': itemCount})
-        target.classList.add('active')
-        target.innerHTML = "УБРАТЬ"
-
-        document.querySelector(".cart__body__items").innerHTML +=
-            `
-            <div class="cart__body__item">
-                    <span>${itemName}</span>
-                    <span>${itemCount}</span>
-                </div>
-            `
-        priceHolder.innerHTML = (parseInt(priceHolder.textContent) + (parseInt(itemCount) * parseInt(itemPrice))).toString()
-
-    } else {
-        cart.splice(cart.findIndex(item => item.itemName === itemName), 1)
-        target.classList.remove('active')
-        target.innerHTML = "В КОРЗИНУ"
-
-        let cartItems = document.querySelector(".cart__body__items").children
-        for(let i = 0; i < cartItems.length; i++) {
-            if (cartItems[i].children[0].textContent === itemName)
-            cartItems[i].remove()
         }
-        priceHolder.innerHTML = (parseInt(priceHolder.textContent) - (parseInt(itemCount) * parseInt(itemPrice))).toString()
+    })
+}
 
+const getJSON = async (url) => {
+    let response = await fetch(url)
+
+    if (response.ok) {
+        return await response.json()
+    } else {
+        alert("[Error]  URL: " + url + " | HTTP: " + response.status)
+        return response.status
     }
 }
 
-const counterIncrement = (target) => {
-    let counter = target.parentElement.getElementsByTagName('input')[0]
-    counter.innerHTML =  counter.value++
-}
 
-const counterDecrement = (target) => {
-    let counter = target.parentElement.getElementsByTagName('input')[0]
-    if (counter.value > 1) {
-        counter.innerHTML = counter.value--
-    }
-}
-
-const counterChange = (target) => {
-    let counter = target.parentElement.getElementsByTagName('input')[0]
-    counter.value = counter.value.replace(/[^\d.]/g, '');
-
-    if (counter.value < 1) {
-        counter.value = '1'
-    }
-}
 
