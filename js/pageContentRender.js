@@ -45,7 +45,7 @@ const pageContentRender = (target) => {
                             <div class="item__desc">
                                 <p>${data.menu[i].description}</p>
                             </div>
-                            <p class="item__price">Цена: ${data.menu[i].price} ₽</p>
+                            <p class="item__price">Цена: <span>${data.menu[i].price}</span> ₽</p>
                             <div class="item__counter-block noselect">
                                 <p>КОЛИЧЕСТВО</p>
                                 <div class="counter-block__counter">
@@ -84,15 +84,36 @@ const cartAdd = (target) => {
     let itemName = item.getElementsByClassName('item__name')[0].children[0].textContent
     let itemCount = item.getElementsByClassName('counter-block__counter')[0]
         .getElementsByTagName('input')[0].value
+    let itemPrice = item.getElementsByClassName('item__price')[0].getElementsByTagName('span')[0].textContent
+    let priceHolder = document.querySelector('#cartPrice')
+
 
     if (!cart.some(item => item.itemName === itemName)) {
         cart.push({'itemName': itemName, 'itemCount': itemCount})
         target.classList.add('active')
         target.innerHTML = "УБРАТЬ"
+
+        document.querySelector(".cart__body__items").innerHTML +=
+            `
+            <div class="cart__body__item">
+                    <span>${itemName}</span>
+                    <span>${itemCount}</span>
+                </div>
+            `
+        priceHolder.innerHTML = (parseInt(priceHolder.textContent) + (parseInt(itemCount) * parseInt(itemPrice))).toString()
+
     } else {
         cart.splice(cart.findIndex(item => item.itemName === itemName), 1)
         target.classList.remove('active')
         target.innerHTML = "В КОРЗИНУ"
+
+        let cartItems = document.querySelector(".cart__body__items").children
+        for(let i = 0; i < cartItems.length; i++) {
+            if (cartItems[i].children[0].textContent === itemName)
+            cartItems[i].remove()
+        }
+        priceHolder.innerHTML = (parseInt(priceHolder.textContent) - (parseInt(itemCount) * parseInt(itemPrice))).toString()
+
     }
 }
 

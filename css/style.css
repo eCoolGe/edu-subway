@@ -28,7 +28,8 @@ body {
 
 .navbar {
     width: 220px;
-    position: fixed;
+    position: absolute;
+    /*position: fixed;*/
     z-index: 1;
     top: 110px;
     left: 260px;
@@ -55,7 +56,8 @@ body {
 
 .cart {
     width: 220px;
-    position: fixed;
+    position: absolute;
+    /*position: fixed;*/
     z-index: 1;
     top: 440px;
     left: 260px;
@@ -122,6 +124,17 @@ body {
     border-bottom: 2px solid #f4b200;
     font-weight: 700;
     font-size: 13px;
+}
+
+.cart__body__item {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0 6px 0;
+    margin: 0 14px;
+    border-bottom: 2px solid #f4b200;
+    font-weight: 700;
+    font-size: 13px;
+    text-align: left;
 }
 
 .product-list {
