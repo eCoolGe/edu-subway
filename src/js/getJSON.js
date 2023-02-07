@@ -1,4 +1,4 @@
-const JSON_PATH = "../assets/data.json";
+const JSON_PATH = "../src/assets/data.json";
 let storage, menu;
 let cart = [];
 

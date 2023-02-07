@@ -4,7 +4,7 @@
     {
       "name": "Овощной",
       "description": "Соус и овощи на выбор",
-      "image": "./assets/icons/sandwiches/ovoshnoy.png",
+      "image": "./src/assets/icons/sandwiches/ovoshnoy.png",
       "price": 105,
       "category": "sandwiches",
       "market": "subway",
@@ -21,7 +21,7 @@
     {
       "name": "Индейка",
       "description": "Сэндвич с индейкой, соус и овощи на выбор",
-      "image": "./assets/icons/sandwiches/ind.png",
+      "image": "./src/assets/icons/sandwiches/ind.png",
       "price": 130,
       "category": "sandwiches",
       "market": "subway",
@@ -38,7 +38,7 @@
     {
       "name": "Ветчина",
       "description": "Сэндвич с ветчиной, соус и овощи на выбор",
-      "image": "./assets/icons/sandwiches/vetchina.png",
+      "image": "./src/assets/icons/sandwiches/vetchina.png",
       "price": 130,
       "category": "sandwiches",
       "market": "subway",
@@ -55,7 +55,7 @@
     {
       "name": "Индейка и ветчина",
       "description": "Сендвич с индейкой и ветчиной, соус и овощи на выбор",
-      "image": "./assets/icons/sandwiches/indandvet.png",
+      "image": "./src/assets/icons/sandwiches/indandvet.png",
       "price": 130,
       "category": "sandwiches",
       "market": "subway",
@@ -72,7 +72,7 @@
     {
       "name": "Морепродукты",
       "description": "Сэндвич с крабовым мясом, соус и овощи на выбор",
-      "image": "./assets/icons/sandwiches/moreprodukty.png",
+      "image": "./src/assets/icons/sandwiches/moreprodukty.png",
       "price": 130,
       "category": "sandwiches",
       "market": "subway",
@@ -89,7 +89,7 @@
     {
       "name": "Тунец",
       "description": "Сэндвич с филе тунца, соус и овощи на выбор",
-      "image": "./assets/icons/sandwiches/tune.png",
+      "image": "./src/assets/icons/sandwiches/tune.png",
       "price": 150,
       "category": "sandwiches",
       "market": "subway",
@@ -106,7 +106,7 @@
     {
       "name": "Острый итальянский",
       "description": "Сэндвич с салями и пепперони, соус и овощи на выбор",
-      "image": "./assets/icons/sandwiches/ostitaliansky.png",
+      "image": "./src/assets/icons/sandwiches/ostitaliansky.png",
       "price": 150,
       "category": "sandwiches",
       "market": "subway",
@@ -123,7 +123,7 @@
     {
       "name": "Б.М.Т.",
       "description": "Ветчина, салями, пепперони, соус и овощи на выбор",
-      "image": "./assets/icons/sandwiches/bmt.png",
+      "image": "./src/assets/icons/sandwiches/bmt.png",
       "price": 150,
       "category": "sandwiches",
       "market": "subway",
@@ -140,7 +140,7 @@
     {
       "name": "Куриная грудка",
       "description": "Куриное филе, соус и овощи на выбор",
-      "image": "./assets/icons/sandwiches/kurgrud.png",
+      "image": "./src/assets/icons/sandwiches/kurgrud.png",
       "price": 150,
       "category": "sandwiches",
       "market": "subway",
@@ -157,7 +157,7 @@
     {
       "name": "Ростбиф",
       "description": "Сэндвич с говядиной, соус и овощи на выбор",
-      "image": "./assets/icons/sandwiches/rostbif.png",
+      "image": "./src/assets/icons/sandwiches/rostbif.png",
       "price": 165,
       "category": "sandwiches",
       "market": "subway",
@@ -174,7 +174,7 @@
     {
       "name": "Мелт",
       "description": "Индейка, ветчина, бекон, соус и овощи на выбор",
-      "image": "./assets/icons/sandwiches/malt.png",
+      "image": "./src/assets/icons/sandwiches/malt.png",
       "price": 165,
       "category": "sandwiches",
       "market": "subway",
@@ -191,7 +191,7 @@
     {
       "name": "Курица бекон",
       "description": "Куриное филе с беконом. Соус и овощи на выбор",
-      "image": "./assets/icons/sandwiches/kurbeckon.png",
+      "image": "./src/assets/icons/sandwiches/kurbeckon.png",
       "price": 165,
       "category": "sandwiches",
       "market": "subway",
@@ -208,7 +208,7 @@
     {
       "name": "Террияки",
       "description": "Куриное филе в кисло-сладком соусе. Соус и овощи на выбор",
-      "image": "./assets/icons/sandwiches/teriaki.png",
+      "image": "./src/assets/icons/sandwiches/teriaki.png",
       "price": 165,
       "category": "sandwiches",
       "market": "subway",
@@ -225,7 +225,7 @@
     {
       "name": "Биф Клаб",
       "description": "С котлетой из курицы и говядины",
-      "image": "./assets/icons/sandwiches/beef-club.png",
+      "image": "./src/assets/icons/sandwiches/beef-club.png",
       "price": 150,
       "category": "sandwiches",
       "market": "subway",
@@ -236,7 +236,7 @@
       {
       "name": "Доп сыр (в бургер)",
       "description": "Дополнительная порция сыра в любой бургер",
-      "image": "./assets/icons/ingredients/products/cheese.png",
+      "image": "./src/assets/icons/ingredients/products/cheese.png",
       "price": 15,
       "category": "burgers",
       "market": "sfc",
@@ -246,7 +246,7 @@
       {
       "name": "ФишБургер",
       "description": "Рыбная котлета с сыром и соусом тар-тар",
-      "image": "./assets/icons/burgers/fish2.png",
+      "image": "./src/assets/icons/burgers/fish2.png",
       "price": 120,
       "category": "burgers",
       "market": "sfc",
@@ -256,7 +256,7 @@
     {
       "name": "Королевский бургер",
       "description": "Говядина, бекон, куриное филе, сыр, салат, овощи",
-      "image": "./assets/icons/burgers/kingburger.png",
+      "image": "./src/assets/icons/burgers/kingburger.png",
       "price": 230,
       "category": "burgers",
       "market": "sfc",
@@ -266,7 +266,7 @@
 {
       "name": "Дарт Вейдер",
       "description": "С большой говяжей котлетой, сыром, салатом",
-      "image": "./assets/icons/burgers/darthvader.png",
+      "image": "./src/assets/icons/burgers/darthvader.png",
       "price": 199,
       "category": "burgers",
       "market": "sfc",
@@ -276,7 +276,7 @@
 {
       "name": "Деревенский",
       "description": "Со свиной котлетой, беконом, драником и салатом",
-      "image": "./assets/icons/burgers/derevenskiy.png",
+      "image": "./src/assets/icons/burgers/derevenskiy.png",
       "price": 129,
       "category": "burgers",
       "market": "sfc",
@@ -286,7 +286,7 @@
         {
       "name": "Имперский",
       "description": "С куриным филе, картофельным драником, сыром, салатом",
-      "image": "./assets/icons/burgers/imperial.png",
+      "image": "./src/assets/icons/burgers/imperial.png",
       "price": 149,
       "category": "burgers",
       "market": "sfc",
@@ -296,7 +296,7 @@
 {
       "name": "Вестерн",
       "description": "Со свиной котлетой, луковыми кольцами и соусом чипотл",
-      "image": "./assets/icons/burgers/western.png",
+      "image": "./src/assets/icons/burgers/western.png",
       "price": 119,
       "category": "burgers",
       "market": "sfc",
@@ -306,7 +306,7 @@
     {
       "name": "Премиум",
       "description": "Говядина, салат, соленый огурец, помидор, лук",
-      "image": "./assets/icons/burgers/premium.png",
+      "image": "./src/assets/icons/burgers/premium.png",
       "price": 140,
       "category": "burgers",
       "market": "sfc",
@@ -316,7 +316,7 @@
     {
       "name": "Двойной премиум",
       "description": "Такой же, как Премиум, но с 2",
-      "image": "./assets/icons/burgers/dublepremium.png",
+      "image": "./src/assets/icons/burgers/dublepremium.png",
       "price": 179,
       "category": "burgers",
       "market": "sfc",
@@ -326,7 +326,7 @@
 	{
       "name": "Пикантный бургер",
       "description": "куриная котлета, салат, лук, сол. огурец, сыр и медовая горчица",
-      "image": "./assets/icons/burgers/spisy.png",
+      "image": "./src/assets/icons/burgers/spisy.png",
       "price": 140,
       "category": "burgers",
       "market": "sfc",
@@ -336,7 +336,7 @@
     {
       "name": "Чизбургер с беконом",
       "description": "С говядиной, беконом, луком, сыром и огурцами",
-      "image": "./assets/icons/burgers/cheeseburger-with-bacon.png",
+      "image": "./src/assets/icons/burgers/cheeseburger-with-bacon.png",
       "price": 105,
       "category": "burgers",
       "market": "sfc",
@@ -346,7 +346,7 @@
     {
       "name": "С куриным филе",
       "description": "С фирменным куриным филе, майонезом и салатом",
-      "image": "./assets/icons/burgers/burgerskurinymfile.png",
+      "image": "./src/assets/icons/burgers/burgerskurinymfile.png",
       "price": 98,
       "category": "burgers",
       "market": "sfc",
@@ -356,7 +356,7 @@
     {
       "name": "Со жгучим куриным филе",
       "description": "С фирменным ОСТРЫМ куриным филе, майонезом и салатом",
-      "image": "./assets/icons/burgers/burgersojguchimfile.png",
+      "image": "./src/assets/icons/burgers/burgersojguchimfile.png",
       "price": 104,
       "category": "burgers",
       "market": "sfc",
@@ -366,7 +366,7 @@
     {
       "name": "Сырный бургер с беконом",
       "description": "С куриным филе и беконом, сыром, майонезом и салатом",
-      "image": "./assets/icons/burgers/cheeseburgersbekonom.png",
+      "image": "./src/assets/icons/burgers/cheeseburgersbekonom.png",
       "price": 145,
       "category": "burgers",
       "market": "sfc",
@@ -376,7 +376,7 @@
     {
       "name": "Слоппи джо",
       "description": "С куриным филе в соусе BBQ, салатом и майонезом",
-      "image": "./assets/icons/burgers/sloppyjo.png",
+      "image": "./src/assets/icons/burgers/sloppyjo.png",
       "price": 132,
       "category": "burgers",
       "market": "sfc",
@@ -386,7 +386,7 @@
 {
       "name": "Пири-пири Бургер",
       "description": "С острым куриным филе",
-      "image": "./assets/icons/burgers/burgerskurinymfile.png",
+      "image": "./src/assets/icons/burgers/burgerskurinymfile.png",
       "price": 129,
       "category": "burgers",
       "market": "sfc",
@@ -396,7 +396,7 @@
         {
       "name": "Чизбургер",
       "description": "С говяжей котлетой, кетчупом и сыром, без овощей",
-      "image": "./assets/icons/burgers/cheesburger.png",
+      "image": "./src/assets/icons/burgers/cheesburger.png",
       "price": 69,
       "category": "burgers",
       "market": "sfc",
@@ -406,7 +406,7 @@
     {
       "name": "Гамбургер",
       "description": "Бургер с говяжей котлетой и кетчупом, но без овощей",
-      "image": "./assets/icons/burgers/gamburger.png",
+      "image": "./src/assets/icons/burgers/gamburger.png",
       "price": 59,
       "category": "burgers",
       "market": "sfc",
@@ -416,7 +416,7 @@
 	{
       "name": "Чикенбург",
       "description": "Бургер с куриной котлетой в панировке",
-      "image": "./assets/icons/burgers/chikenburger.png",
+      "image": "./src/assets/icons/burgers/chikenburger.png",
       "price": 72,
       "category": "burgers",
       "market": "sfc",
@@ -426,7 +426,7 @@
     	{
       "name": "Кубит",
       "description": "С куриным филе и картофельным драником",
-      "image": "./assets/icons/salads/kubit.png",
+      "image": "./src/assets/icons/salads/kubit.png",
       "price": 155,
       "category": "salads",
       "market": "sfc",
@@ -436,7 +436,7 @@
      {
       "name": "Ролл с креветкой (3шт)",
       "description": "Ролл с креветкой в панировке и соусом тар-тар",
-      "image": "./assets/icons/salads/tortiliya.png",
+      "image": "./src/assets/icons/salads/tortiliya.png",
       "price": 160,
       "category": "salads",
       "market": "sfc",
@@ -446,7 +446,7 @@
         {
       "name": "Овощной салат",
       "description": "Вегетарианский салат (можно в пост)",
-      "image": "./assets/icons/salads/vegasalad.png",
+      "image": "./src/assets/icons/salads/vegasalad.png",
       "price": 95,
       "category": "salads",
       "market": "sfc",
@@ -456,7 +456,7 @@
     {
       "name": "Кусок фирменной курицы",
       "description": "1 кусочек курицы в фирменной панировке SFC",
-      "image": "./assets/icons/chicken/kusok-kuricy.png",
+      "image": "./src/assets/icons/chicken/kusok-kuricy.png",
       "price": 68,
       "category": "chicken",
       "market": "sfc",
@@ -466,7 +466,7 @@
     {
       "name": "Чикен барбекю",
       "description": "Куриный шашлычок на шпажке с болгарским перцем и луком",
-      "image": "./assets/icons/chicken/chiken-barbequ.png",
+      "image": "./src/assets/icons/chicken/chiken-barbequ.png",
       "price": 99,
       "category": "chicken",
       "market": "sfc",
@@ -476,7 +476,7 @@
     {
       "name": "Чикен стрипс",
       "description": "6 кусочков фирменного филе",
-      "image": "./assets/icons/chicken/chiken-strips.png",
+      "image": "./src/assets/icons/chicken/chiken-strips.png",
       "price": 154,
       "category": "chicken",
       "market": "sfc",
@@ -486,7 +486,7 @@
 	{
       "name": "Чикен террияки байтс",
       "description": "6 кусочков филе в соусе террияки с салатом и кунжутом",
-      "image": "./assets/icons/salads/teriaki.png",
+      "image": "./src/assets/icons/salads/teriaki.png",
       "price": 137,
       "category": "chicken",
       "market": "sfc",
@@ -496,7 +496,7 @@
     {
       "name": "Пири-пири вингс",
       "description": "Пара крыльев в фирменной панировке пири-пири",
-      "image": "./assets/icons/chicken/2bolshih-kryla.png",
+      "image": "./src/assets/icons/chicken/2bolshih-kryla.png",
       "price": 110,
       "category": "chicken",
       "market": "sfc",
@@ -506,7 +506,7 @@
         {
       "name": "Куриная лапша",
       "description": "На курином бульоне с домашней лапшой",
-      "image": "./assets/icons/chicken/kursup.png",
+      "image": "./src/assets/icons/chicken/kursup.png",
       "price": 80,
       "category": "chicken",
       "market": "sfc",
@@ -516,7 +516,7 @@
     {
       "name": "  6 Острых   крылышек Hot'n'Flakey",
       "description": "6 шт в острой фирменной панировке",
-      "image": "./assets/icons/chicken/6ostryh-krylishek.png",
+      "image": "./src/assets/icons/chicken/6ostryh-krylishek.png",
       "price": 185,
       "category": "chicken",
       "market": "sfc",
@@ -526,7 +526,7 @@
     {
       "name": "12 Острых крылышек Hot'n'Flakey",
       "description": "12 шт в острой фирменной панировке",
-      "image": "./assets/icons/chicken/6ostryh-krylishek.png",
+      "image": "./src/assets/icons/chicken/6ostryh-krylishek.png",
       "price": 334,
       "category": "chicken",
       "market": "sfc",
@@ -536,7 +536,7 @@
     {
       "name": "24 Острых крылышек Hot'n'Flakey",
       "description": "24 шт в острой фирменной панировке",
-      "image": "./assets/icons/chicken/6ostryh-krylishek.png",
+      "image": "./src/assets/icons/chicken/6ostryh-krylishek.png",
       "price": 619,
       "category": "chicken",
       "market": "sfc",
@@ -546,7 +546,7 @@
     {
       "name": "Маленькая картошка",
       "description": "Стандартная порция на одного",
-      "image": "./assets/icons/chicken/free-mini.png",
+      "image": "./src/assets/icons/chicken/free-mini.png",
       "price": 49,
       "category": "chicken",
       "market": "sfc",
@@ -556,7 +556,7 @@
     {
       "name": "Большая картошка",
       "description": "Большая порция на одного голодного",
-      "image": "./assets/icons/chicken/free.png",
+      "image": "./src/assets/icons/chicken/free.png",
       "price": 74,
       "category": "chicken",
       "market": "sfc",
@@ -566,7 +566,7 @@
     {
       "name": "Картошка 'по-английски'",
       "description": "Крупные дольки молодого картофеля",
-      "image": "./assets/icons/chicken/potatoes-in-english.png",
+      "image": "./src/assets/icons/chicken/potatoes-in-english.png",
       "price": 75,
       "category": "chicken",
       "market": "sfc",
@@ -576,7 +576,7 @@
     {
       "name": "Картофельные драники'",
       "description": "Треугольные биточки из картофеля",
-      "image": "./assets/icons/dranik.png",
+      "image": "./src/assets/icons/dranik.png",
       "price": 45,
       "category": "chicken",
       "market": "sfc",
@@ -586,7 +586,7 @@
     {
       "name": "Соус сырный (порц)",
       "description": "",
-      "image": "./assets/icons/chicken/sirniy1.png",
+      "image": "./src/assets/icons/chicken/sirniy1.png",
       "price": 20,
       "category": "chicken",
       "market": "sfc",
@@ -596,7 +596,7 @@
      {
       "name": "Соус чесночный (порц)",
       "description": "",
-      "image": "./assets/icons/chicken/chesnochniy1.png",
+      "image": "./src/assets/icons/chicken/chesnochniy1.png",
       "price": 20,
       "category": "chicken",
       "market": "sfc",
@@ -606,7 +606,7 @@
      {
       "name": "Соус карри (порц)",
       "description": "",
-      "image": "./assets/icons/chicken/curry1.png",
+      "image": "./src/assets/icons/chicken/curry1.png",
       "price": 20,
       "category": "chicken",
       "market": "sfc",
@@ -616,7 +616,7 @@
      {
       "name": "Соус кисло-сладкий (порц)",
       "description": "",
-      "image": "./assets/icons/chicken/kislosladkiy2.png",
+      "image": "./src/assets/icons/chicken/kislosladkiy2.png",
       "price": 20,
       "category": "chicken",
       "market": "sfc",
@@ -626,7 +626,7 @@
      {
       "name": "Соус горчичный (порц)",
       "description": "",
-      "image": "./assets/icons/chicken/gorchichniy1.png",
+      "image": "./src/assets/icons/chicken/gorchichniy1.png",
       "price": 20,
       "category": "chicken",
       "market": "sfc",
@@ -636,7 +636,7 @@
      {
       "name": "Соус сальса (порц)",
       "description": "островатый",
-      "image": "./assets/icons/chicken/salsa1.png",
+      "image": "./src/assets/icons/chicken/salsa1.png",
       "price": 20,
       "category": "chicken",
       "market": "sfc",
@@ -646,7 +646,7 @@
      {
       "name": "Соус барбекью (порц)",
       "description": "с дымком",
-      "image": "./assets/icons/chicken/bbq1.png",
+      "image": "./src/assets/icons/chicken/bbq1.png",
       "price": 20,
       "category": "chicken",
       "market": "sfc",
@@ -656,7 +656,7 @@
      {
       "name": "Соус томатный кетчуп (порц)",
       "description": "классический вкус Heinz",
-      "image": "./assets/icons/chicken/tomatniy1.png",
+      "image": "./src/assets/icons/chicken/tomatniy1.png",
       "price": 20,
       "category": "chicken",
       "market": "sfc",
@@ -666,7 +666,7 @@
     {
       "name": "Цезарь",
       "description": "С куриным филе, салатом, сыром Пармезан и сухариками",
-      "image": "./assets/icons/salads/salad.png",
+      "image": "./src/assets/icons/salads/salad.png",
       "price": 135,
       "category": "salads",
       "market": "sfc",
@@ -676,7 +676,7 @@
 	{
       "name": "Лукошко",
       "description": "С куриным филе, жареными грибочками, соленым огурцами и сыром",
-      "image": "./assets/icons/salads/lukoshko.png",
+      "image": "./src/assets/icons/salads/lukoshko.png",
       "price": 125,
       "category": "salads",
       "market": "sfc",
@@ -686,7 +686,7 @@
 	{
       "name": "Салат с тунцом",
       "description": "Тунец с салатом, болгарским перцем, маслинами и кукурузой",
-      "image": "./assets/icons/salads/saladtun.png",
+      "image": "./src/assets/icons/salads/saladtun.png",
       "price": 143,
       "category": "salads",
       "market": "sfc",
@@ -696,7 +696,7 @@
     {
       "name": "Курица с яблоком и апельсином",
       "description": "салат, яблоко, апельсин, огурец свежий, куриное филе",
-      "image": "./assets/icons/salads/salad.png",
+      "image": "./src/assets/icons/salads/salad.png",
       "price": 120,
       "category": "salads",
       "market": "sfc",
@@ -706,7 +706,7 @@
     {
       "name": "Курица с грецким орехом и черносливом",
       "description": "салат, орех, чернослив, куриное филе с чесночным соусом",
-      "image": "./assets/icons/salads/salad.png",
+      "image": "./src/assets/icons/salads/salad.png",
       "price": 120,
       "category": "salads",
       "market": "sfc",
@@ -716,7 +716,7 @@
     {
       "name": "Салат греческий",
       "description": "Салат, помидоры, огурцы, маслины, болгар. перец, Фета",
-      "image": "./assets/icons/salads/salad.png",
+      "image": "./src/assets/icons/salads/salad.png",
       "price": 130,
       "category": "salads",
       "market": "sfc",
@@ -726,7 +726,7 @@
     {
       "name": "Мини-тортилья",
       "description": "Мини-лепешка, куриное филе, сыр, салат, помидор",
-      "image": "./assets/icons/salads/tortiliya.png",
+      "image": "./src/assets/icons/salads/tortiliya.png",
       "price": 67,
       "category": "salads",
       "market": "sfc",
@@ -736,7 +736,7 @@
     {
       "name": "Тортилья SFC",
       "description": "Куриное филе SFC, салат, помидор, сыр, майонез",
-      "image": "./assets/icons/salads/tortiliya.png",
+      "image": "./src/assets/icons/salads/tortiliya.png",
       "price": 124,
       "category": "salads",
       "market": "sfc",
@@ -746,7 +746,7 @@
     {
       "name": "Тортилья пири-пири",
       "description": "С острой курицей Пири-пири, салат, помидор, майонез, сыр",
-      "image": "./assets/icons/salads/tortiliya.png",
+      "image": "./src/assets/icons/salads/tortiliya.png",
       "price": 133,
       "category": "salads",
       "market": "sfc",
@@ -756,7 +756,7 @@
     {
       "name": "Pepsi 1,25",
       "description": "Бутылка 1.25",
-      "image": "./assets/icons/drinks/pepsi-125.jpg",
+      "image": "./src/assets/icons/drinks/pepsi-125.jpg",
       "price": 115,
       "category": "drinks",
       "market": "subway",
@@ -766,7 +766,7 @@
      {
       "name": "Маффин",
       "description": "",
-      "image": "./assets/icons/drinks/muffin.jpg",
+      "image": "./src/assets/icons/drinks/muffin.jpg",
       "price": 70,
       "category": "drinks",
       "market": "subway",
@@ -776,7 +776,7 @@
     {
       "name": "Pepsi 0,6",
       "description": "Бутылка 0.6",
-      "image": "./assets/icons/drinks/pepsi-bottle.jpg",
+      "image": "./src/assets/icons/drinks/pepsi-bottle.jpg",
       "price": 75,
       "category": "drinks",
       "market": "subway",
@@ -786,7 +786,7 @@
     {
       "name": "Mirinda 0,6",
       "description": "Бутылка 0.6",
-      "image": "./assets/icons/drinks/mirinda-bottle.jpg",
+      "image": "./src/assets/icons/drinks/mirinda-bottle.jpg",
       "price": 75,
       "category": "drinks",
       "market": "subway",
@@ -796,7 +796,7 @@
     {
       "name": "7up 0,6",
       "description": "Бутылка 0.6",
-      "image": "./assets/icons/drinks/7up-bottle.png",
+      "image": "./src/assets/icons/drinks/7up-bottle.png",
       "price": 75,
       "category": "drinks",
       "market": "subway",
@@ -806,7 +806,7 @@
     {
       "name": "Mountain dew 0,6",
       "description": "Бутылка 0.6",
-      "image": "./assets/icons/drinks/mountain-dew-bottle.jpg",
+      "image": "./src/assets/icons/drinks/mountain-dew-bottle.jpg",
       "price": 75,
       "category": "drinks",
       "market": "subway",
@@ -816,7 +816,7 @@
       {
       "name": "Кленовый пекан",
       "description": "самая популярная выпечка Subway",
-      "image": "./assets/icons/drinks/maple-pecan.png",
+      "image": "./src/assets/icons/drinks/maple-pecan.png",
       "price": 75,
       "category": "drinks",
       "market": "subway",
@@ -826,7 +826,7 @@
     {
       "name": "Сок",
       "description": "Упаковка 0.2 в ассортименте",
-      "image": "./assets/icons/drinks/juice.jpg",
+      "image": "./src/assets/icons/drinks/juice.jpg",
       "price": 40,
       "category": "drinks",
       "market": "subway",
@@ -836,7 +836,7 @@
     {
       "name": "Чай Lipton",
       "description": "Бутылка 0.6, Зеленый, Малина, Лимон, Персик",
-      "image": "./assets/icons/drinks/lipton-tea.jpg",
+      "image": "./src/assets/icons/drinks/lipton-tea.jpg",
       "price": 80,
       "category": "drinks",
       "market": "subway",
@@ -846,7 +846,7 @@
     {
       "name": "Аква Минерале (без газа)",
       "description": "Бутылка 0.6",
-      "image": "./assets/icons/drinks/mineral-water-bottle.jpg",
+      "image": "./src/assets/icons/drinks/mineral-water-bottle.jpg",
       "price": 60,
       "category": "drinks",
       "market": "subway",
@@ -856,7 +856,7 @@
     {
       "name": "Аква Минерале (Газ)",
       "description": "Бутылка 0.6",
-      "image": "./assets/icons/drinks/mineral-water-gas.jpeg",
+      "image": "./src/assets/icons/drinks/mineral-water-gas.jpeg",
       "price": 60,
       "category": "drinks",
       "market": "subway",
@@ -866,7 +866,7 @@
     {
       "name": "Адреналин раш",
       "description": "",
-      "image": "./assets/icons/drinks/adrenaline-rush.jpg",
+      "image": "./src/assets/icons/drinks/adrenaline-rush.jpg",
       "price": 120,
       "category": "drinks",
       "market": "subway",
@@ -876,7 +876,7 @@
     {
       "name": "Кукис",
       "description": "Творожная масса с шоколадной крошкой",
-      "image": "./assets/icons/drinks/cookies.jpg",
+      "image": "./src/assets/icons/drinks/cookies.jpg",
       "price": 40,
       "category": "drinks",
       "market": "subway",
@@ -886,7 +886,7 @@
     {
       "name": "Брюссельская вафля",
       "description": "",
-      "image": "./assets/icons/drinks/brussels-waffle.png",
+      "image": "./src/assets/icons/drinks/brussels-waffle.png",
       "price": 70,
       "category": "drinks",
       "market": "subway",
@@ -896,7 +896,7 @@
        {
       "name": "Круассан",
       "description": "",
-      "image": "./assets/icons/drinks/croissant.jpg",
+      "image": "./src/assets/icons/drinks/croissant.jpg",
       "price": 80,
       "category": "drinks",
       "market": "subway",
@@ -906,7 +906,7 @@
         {
       "name": "Pepsi",
       "description": "Объемом от 0.4 Л, на выбор",
-      "image": "./assets/icons/drinks/pepsi.jpg",
+      "image": "./src/assets/icons/drinks/pepsi.jpg",
       "price": 50,
       "category": "drinks",
       "market": "subway",
@@ -921,7 +921,7 @@
     {
     "name": "Вегетарианская 35см",
       "description": "Лук, перец, томаты, сыр",
-      "image": "./assets/icons/pizza/Veggie.png",
+      "image": "./src/assets/icons/pizza/Veggie.png",
       "price": 250,
       "category": "pizza",
       "market": "",
@@ -931,7 +931,7 @@
     {
     "name": "Pizza Spot (фирм) 35см",
       "description": "бекон, сыр, руккола",
-      "image": "./assets/icons/pizza/spotfirm.png",
+      "image": "./src/assets/icons/pizza/spotfirm.png",
       "price": 300,
       "category": "pizza",
       "market": "",
@@ -941,7 +941,7 @@
           {
     "name": "Маргарита 35см",
       "description": "Базилик, орегано, моцарелла",
-      "image": "./assets/icons/pizza/margo.png",
+      "image": "./src/assets/icons/pizza/margo.png",
       "price": 250,
       "category": "pizza",
       "market": "",
@@ -951,7 +951,7 @@
           {
     "name": "Грибная 35см",
       "description": "Орегано, пармезан, шампиньоны, моцарелла",
-      "image": "./assets/icons/pizza/mashroom.png",
+      "image": "./src/assets/icons/pizza/mashroom.png",
       "price": 250,
       "category": "pizza",
       "market": "",
@@ -961,7 +961,7 @@
           {
     "name": "Баварская 35см",
       "description": "Сосиски, охотничьи колбаски, моцарелла, пармезан",
-      "image": "./assets/icons/pizza/bavar.png",
+      "image": "./src/assets/icons/pizza/bavar.png",
       "price": 300,
       "category": "pizza",
       "market": "",
@@ -971,7 +971,7 @@
                 {
     "name": "Пепперони 35см",
       "description": "Пепперони, моцарелла",
-      "image": "./assets/icons/pizza/pepperoni.png",
+      "image": "./src/assets/icons/pizza/pepperoni.png",
       "price": 300,
       "category": "pizza",
       "market": "",
@@ -981,7 +981,7 @@
                       {
     "name": "Четыре Сыра Кватро Формаджио 35см",
       "description": "Творожный сыр, гауда, моцарелла",
-      "image": "./assets/icons/pizza/Cheese.png",
+      "image": "./src/assets/icons/pizza/Cheese.png",
       "price": 350,
       "category": "pizza",
       "market": "",
@@ -991,7 +991,7 @@
                       {
     "name": "Куриная 35см",
       "description": "курица копченая и маринованная, моцарелла, томаты",
-      "image": "./assets/icons/pizza/chicken.png",
+      "image": "./src/assets/icons/pizza/chicken.png",
       "price": 350,
       "category": "pizza",
       "market": "",
@@ -1001,7 +1001,7 @@
                             {
     "name": "Ветчина с грибами 35см",
       "description": "Ветчина, шампиньоны, моцарелла",
-      "image": "./assets/icons/pizza/hammashroom.png",
+      "image": "./src/assets/icons/pizza/hammashroom.png",
       "price": 350,
       "category": "pizza",
       "market": "",
@@ -1011,7 +1011,7 @@
                             {
     "name": "Морская 35см",
       "description": "морепродукты, томаты, моцарелла",
-      "image": "./assets/icons/pizza/sea.png",
+      "image": "./src/assets/icons/pizza/sea.png",
       "price": 350,
       "category": "pizza",
       "market": "",
@@ -1021,7 +1021,7 @@
                             {
     "name": "Сицилийская (ОСТРАЯ) 35см",
       "description": "Перец, лук, халапеньо, карбонат, курица",
-      "image": "./assets/icons/pizza/sicil.png",
+      "image": "./src/assets/icons/pizza/sicil.png",
       "price": 400,
       "category": "pizza",
       "market": "",
@@ -1031,7 +1031,7 @@
                             {
     "name": "Гавайская 35см",
       "description": "курица, ананасы, белый соус",
-      "image": "./assets/icons/pizza/Hawaiian.png",
+      "image": "./src/assets/icons/pizza/Hawaiian.png",
       "price": 400,
       "category": "pizza",
       "market": "",
@@ -1041,7 +1041,7 @@
                                   {
     "name": "Карбонара 35см",
       "description": "бекон, пармезан, моцарелла, орегано",
-      "image": "./assets/icons/pizza/karbonara.png",
+      "image": "./src/assets/icons/pizza/karbonara.png",
       "price": 400,
       "category": "pizza",
       "market": "",
@@ -1051,7 +1051,7 @@
                                   {
     "name": "Мясная 35см",
       "description": "Карбонат, бекон, курица, сыр",
-      "image": "./assets/icons/pizza/meat.png",
+      "image": "./src/assets/icons/pizza/meat.png",
       "price": 450,
       "category": "pizza",
       "market": "",
@@ -1061,7 +1061,7 @@
                                         {
     "name": "Четыре Сезона Кватро Стаджиони 35см",
       "description": "Каперсы, анчоусы, артишоки, грибы, ветчина",
-      "image": "./assets/icons/pizza/4.png",
+      "image": "./src/assets/icons/pizza/4.png",
       "price": 450,
       "category": "pizza",
       "market": "",
@@ -1071,7 +1071,7 @@
 {
       "name": "Доп сыр (в шаурму)",
       "description": "Дополнительная порция сыра в любую шаурму",
-      "image": "./assets/icons/ingredients/products/cheese.png",
+      "image": "./src/assets/icons/ingredients/products/cheese.png",
       "price": 10,
       "category": "shaurma",
       "market": "doner",
@@ -1081,7 +1081,7 @@
 {
       "name": "Буррито с говядиной (ОСТР)",
       "description": "Говядина, Халапеньо, фасоль, сметана, сыр",
-      "image": "./assets/icons/shaurma/burrito.jpg",
+      "image": "./src/assets/icons/shaurma/burrito.jpg",
       "price": 230,
       "category": "shaurma",
       "market": "doner",
@@ -1091,7 +1091,7 @@
     {
       "name": "Буррито с курицей (остр)",
       "description": "Курица, Халапеньо, фасоль, сметана, сыр",
-      "image": "./assets/icons/shaurma/burrito.jpg",
+      "image": "./src/assets/icons/shaurma/burrito.jpg",
       "price": 190,
       "category": "shaurma",
       "market": "doner",
@@ -1101,7 +1101,7 @@
     {
       "name": "Фахитос с курицей",
       "description": "Курица, мексиканская смесь, соус гуакамоле, грибы, маслины",
-      "image": "./assets/icons/shaurma/fahitas.jpg",
+      "image": "./src/assets/icons/shaurma/fahitas.jpg",
       "price": 200,
       "category": "shaurma",
       "market": "doner",
@@ -1111,7 +1111,7 @@
     {
       "name": "Фахитос с говядиной",
       "description": "Говядина, мексиканская смесь, соус гуакамоле, грибы, маслины",
-      "image": "./assets/icons/shaurma/fahitas.jpg",
+      "image": "./src/assets/icons/shaurma/fahitas.jpg",
       "price": 250,
       "category": "shaurma",
       "market": "doner",
@@ -1121,7 +1121,7 @@
     {
       "name": "Шаурма c курицей",
       "description": "Куриная шаурма в лаваше с фирменным соусом и овощами",
-      "image": "./assets/icons/shaurma/shaurma_kurica.jpg",
+      "image": "./src/assets/icons/shaurma/shaurma_kurica.jpg",
       "price": 170,
       "category": "shaurma",
       "market": "doner",
@@ -1131,7 +1131,7 @@
     {
       "name": "Шаурма c говядиной",
       "description": "Говядина со свежими овощами в лаваше",
-      "image": "./assets/icons/shaurma/shaurma_goviadina.jpg",
+      "image": "./src/assets/icons/shaurma/shaurma_goviadina.jpg",
       "price": 220,
       "category": "shaurma",
       "market": "doner",
@@ -1141,7 +1141,7 @@
     {
       "name": "Мини-шаурма c курицей",
       "description": "Мини-версия фирменной шаурмы",
-      "image": "./assets/icons/shaurma/shaurma_kurica.jpg",
+      "image": "./src/assets/icons/shaurma/shaurma_kurica.jpg",
       "price": 130,
       "category": "shaurma",
       "market": "doner",
@@ -1151,7 +1151,7 @@
     {
       "name": "Мини-шаурма c говядиной",
       "description": "Мини-версия фирменной шаурмы",
-      "image": "./assets/icons/shaurma/shaurma_kurica.jpg",
+      "image": "./src/assets/icons/shaurma/shaurma_kurica.jpg",
       "price": 150,
       "category": "shaurma",
       "market": "doner",
@@ -1161,7 +1161,7 @@
     {
       "name": "Свинина с овощами в соусе тайчили",
       "description": "Добрая порция свинины в лаваше",
-      "image": "./assets/icons/shaurma/pork-taychiliroll.png",
+      "image": "./src/assets/icons/shaurma/pork-taychiliroll.png",
       "price": 210,
       "category": "shaurma",
       "market": "doner",
@@ -1171,7 +1171,7 @@
     {
       "name": "Курица с овощами в соусе терияки",
       "description": "Курица в лаваше со свежими овощами в соусе терияки",
-      "image": "./assets/icons/shaurma/teriyaki-chiken.png",
+      "image": "./src/assets/icons/shaurma/teriyaki-chiken.png",
       "price": 190,
       "category": "shaurma",
       "market": "doner",
@@ -1184,121 +1184,121 @@
       "name": "Бекон",
       "description": "(3-4 кусочка)",
       "price": 35,
-      "image": "./assets/icons/ingredients/products/bacon.png"
+      "image": "./src/assets/icons/ingredients/products/bacon.png"
     },
     "bmt": {
       "name": "БМТ",
       "description": "",
       "price": 60,
-      "image": "./assets/icons/ingredients/products/bmt.png"
+      "image": "./src/assets/icons/ingredients/products/bmt.png"
     },
     "cheese": {
       "name": "Сыр",
       "description": "(2 треугольника)",
       "price": 20,
-      "image": "./assets/icons/ingredients/products/cheese.png"
+      "image": "./src/assets/icons/ingredients/products/cheese.png"
     },
     "moc": {
       "name": "Моцарелла",
       "description": "(1 скуп)",
       "price": 20,
-      "image": "./assets/icons/ingredients/products/moc.png"
+      "image": "./src/assets/icons/ingredients/products/moc.png"
     },
     "chicken-breast": {
       "name": "Куриная грудка",
       "description": "",
       "price": 60,
-      "image": "./assets/icons/ingredients/products/chicken-breast.png"
+      "image": "./src/assets/icons/ingredients/products/chicken-breast.png"
     },
     "chicken-teriyaki": {
       "name": "Курица Терияки",
       "description": "",
       "price": 65,
-      "image": "./assets/icons/ingredients/products/chicken-teriyaki.png"
+      "image": "./src/assets/icons/ingredients/products/chicken-teriyaki.png"
     },
     "ham": {
       "name": "Ветчина",
       "description": "(4 кусочка)",
       "price": 45,
-      "image": "./assets/icons/ingredients/products/ham.png"
+      "image": "./src/assets/icons/ingredients/products/ham.png"
     },
     "melt": {
       "name": "Мелт",
       "description": "",
       "price": 70,
-      "image": "./assets/icons/ingredients/products/melt.png"
+      "image": "./src/assets/icons/ingredients/products/melt.png"
     },
     "mushrooms": {
       "name": "Грибы",
       "description": "(2 скупа)",
       "price": 50,
-      "image": "./assets/icons/ingredients/products/mushrooms.png"
+      "image": "./src/assets/icons/ingredients/products/mushrooms.png"
     },
     "omelet": {
       "name": "Омлет",
       "description": "",
       "price": 50,
-      "image": "./assets/icons/ingredients/products/omelet.png"
+      "image": "./src/assets/icons/ingredients/products/omelet.png"
     },
     "pepperoni": {
       "name": "Пепперони",
       "description": "(3 кусочка)",
       "price": 40,
-      "image": "./assets/icons/ingredients/products/pepperoni.png"
+      "image": "./src/assets/icons/ingredients/products/pepperoni.png"
     },
     "pork-bbq": {
       "name": "Свинина Барбекю",
       "description": "",
       "price": 65,
-      "image": "./assets/icons/ingredients/products/pork-bbq.png"
+      "image": "./src/assets/icons/ingredients/products/pork-bbq.png"
     },
     "roast": {
       "name": "Ростбиф",
       "description": "(2-3 кусочка)",
       "price": 55,
-      "image": "./assets/icons/ingredients/products/roast.png"
+      "image": "./src/assets/icons/ingredients/products/roast.png"
     },
     "salami": {
       "name": "Салями",
       "description": "(4 кусочка)",
       "price": 40,
-      "image": "./assets/icons/ingredients/products/salami.png"
+      "image": "./src/assets/icons/ingredients/products/salami.png"
     },
     "seafood": {
       "name": "Морепродукты",
       "description": "(2 скупа)",
       "price": 45,
-      "image": "./assets/icons/ingredients/products/seafood.png"
+      "image": "./src/assets/icons/ingredients/products/seafood.png"
     },
     "spicy-italian": {
       "name": "Острый итальянский",
       "description": "",
       "price": 60,
-      "image": "./assets/icons/ingredients/products/spicy-italian.png"
+      "image": "./src/assets/icons/ingredients/products/spicy-italian.png"
     },
     "subway-club": {
       "name": "Сабвэй Клаб",
       "description": "",
       "price": 70,
-      "image": "./assets/icons/ingredients/products/subway-club.png"
+      "image": "./src/assets/icons/ingredients/products/subway-club.png"
     },
     "tuna": {
       "name": "Тунец",
       "description": "(2 скупа)",
       "price": 55,
-      "image": "./assets/icons/ingredients/products/tuna.png"
+      "image": "./src/assets/icons/ingredients/products/tuna.png"
     },
     "turkey": {
       "name": "Индейка",
       "description": "(3 кусочка)",
       "price": 45,
-      "image": "./assets/icons/ingredients/products/turkey.png"
+      "image": "./src/assets/icons/ingredients/products/turkey.png"
     },
     "turkey-ham": {
       "name": "Индейка и ветчина",
       "description": "(2/2 кусочка)",
       "price": 45,
-      "image": "./assets/icons/ingredients/products/turkey-ham.png"
+      "image": "./src/assets/icons/ingredients/products/turkey-ham.png"
     }
   },
   "volumes": {
@@ -1339,12 +1339,12 @@
     "1x": {
       "name": "15 См",
       "price": 0,
-      "image": "./assets/icons/sizes/1x.jpg"
+      "image": "./src/assets/icons/sizes/1x.jpg"
     },
     "2x": {
       "name": "30 См",
       "price": 110,
-      "image": "./assets/icons/sizes/2x.jpg"
+      "image": "./src/assets/icons/sizes/2x.jpg"
     }
   },
   "breads": {
@@ -1352,31 +1352,31 @@
       "name": "Белый итальянский",
       "description": "",
       "price": 0,
-      "image": "./assets/icons/bread/white-italian.png"
+      "image": "./src/assets/icons/bread/white-italian.png"
     },
     "white-sesame": {
       "name": "Белый с кунжутом",
       "description": "",
       "price": 0,
-      "image": "./assets/icons/bread/white-sesame.png"
+      "image": "./src/assets/icons/bread/white-sesame.png"
     },
     "oregano-parmesan": {
       "name": "Орегано-пармезан",
       "description": "",
       "price": 0,
-      "image": "./assets/icons/bread/oregano-parmesan.png"
+      "image": "./src/assets/icons/bread/oregano-parmesan.png"
     },
     "grey": {
       "name": "Серый",
       "description": "",
       "price": 0,
-      "image": "./assets/icons/bread/unknown_1.png"
+      "image": "./src/assets/icons/bread/unknown_1.png"
     },
     "grey-with-cereal": {
       "name": "Серый с овсяными хлопьями",
       "description": "",
       "price": 0,
-      "image": "./assets/icons/bread/grey-with-cereal.png"
+      "image": "./src/assets/icons/bread/grey-with-cereal.png"
     }
   },
   "vegetables": {
@@ -1384,43 +1384,43 @@
       "name": "Пекинская капуста",
       "description": "",
       "price": 0,
-      "image": "./assets/icons/ingredients/vegetables/pekinka.png"
+      "image": "./src/assets/icons/ingredients/vegetables/pekinka.png"
     },
     "tomato": {
       "name": "Помидор",
       "description": "",
       "price": 0,
-      "image": "./assets/icons/ingredients/vegetables/tomato.png"
+      "image": "./src/assets/icons/ingredients/vegetables/tomato.png"
          },
     "pickled-cucumber": {
       "name": "Соленый огурец",
       "description": "",
       "price": 0,
-      "image": "./assets/icons/ingredients/vegetables/pickled-cucumber.png"
+      "image": "./src/assets/icons/ingredients/vegetables/pickled-cucumber.png"
     },
     "onion-purple": {
       "name": "Красный лук",
       "description": "",
       "price": 0,
-      "image": "./assets/icons/ingredients/vegetables/onion-purple.png"
+      "image": "./src/assets/icons/ingredients/vegetables/onion-purple.png"
     },
     "green-peppers-bulgarian": {
       "name": "Болгарский перец",
       "description": "",
       "price": 0,
-      "image": "./assets/icons/ingredients/vegetables/green-peppers-bulgarian.png"
+      "image": "./src/assets/icons/ingredients/vegetables/green-peppers-bulgarian.png"
     },
     "olives": {
       "name": "Маслины",
       "description": "",
       "price": 0,
-      "image": "./assets/icons/ingredients/vegetables/olives.png"
+      "image": "./src/assets/icons/ingredients/vegetables/olives.png"
     },
     "pepper-hapapeno": {
       "name": "Острый перец Халапеньо",
       "description": "",
       "price": 0,
-      "image": "./assets/icons/ingredients/vegetables/pepper-hapapeno.png"
+      "image": "./src/assets/icons/ingredients/vegetables/pepper-hapapeno.png"
     }
   },
   "sauces": {
@@ -1428,93 +1428,93 @@
       "name": "1000 Островов",
       "description": "",
       "price": 0,
-      "image": "./assets/icons/ingredients/sauces/1000-islands.png"
+      "image": "./src/assets/icons/ingredients/sauces/1000-islands.png"
     },
     "bbq": {
       "name": "Барбекю",
       "description": "",
       "price": 0,
-      "image": "./assets/icons/ingredients/sauces/bbq.png"
+      "image": "./src/assets/icons/ingredients/sauces/bbq.png"
     },
     "cheese": {
       "name": "Сырный",
       "description": "",
       "price": 0,
-      "image": "./assets/icons/ingredients/sauces/cheese.png"
+      "image": "./src/assets/icons/ingredients/sauces/cheese.png"
     },
     "chipotle": {
       "name": "Чиппотл",
       "description": "",
       "price": 0,
-      "image": "./assets/icons/ingredients/sauces/chipotle.png"
+      "image": "./src/assets/icons/ingredients/sauces/chipotle.png"
     },
     "garlic": {
       "name": "Чесночный",
       "description": "",
       "price": 0,
-      "image": "./assets/icons/ingredients/sauces/garlic.png"
+      "image": "./src/assets/icons/ingredients/sauces/garlic.png"
     },
     "mayonnaise": {
       "name": "Майонез",
       "description": "",
       "price": 0,
-      "image": "./assets/icons/ingredients/sauces/mayonnaise.png"
+      "image": "./src/assets/icons/ingredients/sauces/mayonnaise.png"
     },
     "mustard": {
       "name": "Горчица",
       "description": "",
       "price": 0,
-      "image": "./assets/icons/ingredients/sauces/mustard.png"
+      "image": "./src/assets/icons/ingredients/sauces/mustard.png"
     },
     "mustard-and-honey": {
       "name": "Горчица медовая",
       "description": "",
       "price": 0,
-      "image": "./assets/icons/ingredients/sauces/mustard-and-honey.png"
+      "image": "./src/assets/icons/ingredients/sauces/mustard-and-honey.png"
     },
     "olive-oil": {
       "name": "Оливковое масло",
       "description": "",
       "price": 0,
-      "image": "./assets/icons/ingredients/sauces/olive-oil.png"
+      "image": "./src/assets/icons/ingredients/sauces/olive-oil.png"
     },
     "spicy-ketchup": {
       "name": "Острый кетчуп",
       "description": "",
       "price": 0,
-      "image": "./assets/icons/ingredients/sauces/spicy-ketchup.png"
+      "image": "./src/assets/icons/ingredients/sauces/spicy-ketchup.png"
     },
     "sweet-and-sour": {
       "name": "Кисло-сладкий",
       "description": "",
       "price": 0,
-      "image": "./assets/icons/ingredients/sauces/sweet-and-sour.png"
+      "image": "./src/assets/icons/ingredients/sauces/sweet-and-sour.png"
     },
     "sweet-onion": {
       "name": "Сладкий лук",
       "description": "",
       "price": 0,
-      "image": "./assets/icons/ingredients/sauces/sweet-onion.png"
+      "image": "./src/assets/icons/ingredients/sauces/sweet-onion.png"
     },
     "wine-vinegar": {
       "name": "Винный уксус",
       "description": "",
       "price": 0,
-      "image": "./assets/icons/ingredients/sauces/wine-vinegar.png"
+      "image": "./src/assets/icons/ingredients/sauces/wine-vinegar.png"
     }
   },
   "markets": {
     "subway": {
       "name": "Subway",
-      "image": "./assets/icons/markets/subway_logo.png"
+      "image": "./src/assets/icons/markets/subway_logo.png"
     },
     "sfc": {
       "name": "South Fried Chicke",
-      "image": "./assets/icons/markets/south_fried_chicken.png"
+      "image": "./src/assets/icons/markets/south_fried_chicken.png"
     },
     "doner": {
       "name": "Донер Кебаб",
-      "image": "./assets/icons/markets/doner.png"
+      "image": "./src/assets/icons/markets/doner.png"
     }
   }
 }
