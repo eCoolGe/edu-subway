@@ -46,46 +46,23 @@
     <div class="hystmodal__wrap">
         <div class="hystmodal__window" role="dialog" aria-modal="true">
             <div class="hystmodal__header">
-                Выберите размер сендвича
+                <span>Выберите размер сендвича</span>
                 <button class="hystmodal__close" onclick="modalContentClose()"></button>
             </div>
             <div class="hystmodal__middle">
                 <ul class="hystmodal__stages">
-                    <li class="active">Размер</li>
-                    <li>Хлеб</li>
-                    <li>Овощи</li>
-                    <li>Соусы</li>
-                    <li>Начинка</li>
-                    <li>Готово!</li>
+                    <li id="sizes" class="active">Размер</li>
+                    <li id="breads">Хлеб</li>
+                    <li id="vegetables">Овощи</li>
+                    <li id="sauces">Соусы</li>
+                    <li id="fillings">Начинка</li>
+                    <li id="finally">Готово!</li>
                 </ul>
                 <div class="hystmodal__stages-buttons">
                     <button class="noselect" >< НАЗАД</button>
                     <button class="noselect" >ВПЕРЕД ></button>
                 </div>
-                <div class="hystmodal__product-list">
-                    <article class="hystmodal__item">
-                        <div class="hystmodal__item__outer-circle">
-                            <div class="hystmodal__item__inner-circle">
-                                <img src="${product.image}" alt="">
-                            </div>
-                        </div>
-                        <div class="hystmodal__item__name">
-                            <p>123123</p>
-                        </div>
-                        <p class="hystmodal__item__price">Цена: <span>123</span> ₽</p>
-                    </article>
-                    <article class="hystmodal__item">
-                        <div class="hystmodal__item__outer-circle">
-                            <div class="hystmodal__item__inner-circle">
-                                <img src="${product.image}" alt="">
-                            </div>
-                        </div>
-                        <div class="hystmodal__item__name">
-                            <p>123123</p>
-                        </div>
-                        <p class="hystmodal__item__price">Цена: <span>123</span> ₽</p>
-                    </article>
-                </div>
+                <div class="hystmodal__product-list"></div>
             </div>
             <div class="hystmodal__footer">
                 Итого: 110 ₽

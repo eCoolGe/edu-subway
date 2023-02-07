@@ -36,24 +36,62 @@ const modalContentOpen = (target) => {
     }
 
     const modalContentRender = (pageInterval) => {
-
+        let productsList = document.querySelector(".hystmodal__product-list")
+        let header = document.querySelector(".hystmodal__header span")
         let activeLi = document.getElementsByClassName('active')[0]
         ul.children[ulChildren.indexOf(activeLi)].classList.remove('active')
         ul.children[ulChildren.indexOf(activeLi) + pageInterval].classList.add('active')
         modalButtonRender()
 
-        getJSON(JSON_PATH).then(data => {
-            let productsList = document.querySelector(".hystmodal__product-list")
+        activeLi = document.getElementsByClassName('active')[0]
+        let itemsData = storage[activeLi.id]
 
-            productsList.innerHTML = ""
+        switch (activeLi.id) {
+            case "sizes":
+                header.innerHTML = "Выберите размер сендвича"
+                break;
+            case "breads":
+                header.innerHTML = "Хлеб для сендвича на выбор"
+                break;
+            case "vegetables":
+                header.innerHTML = "Дополнительные овощи бесплатно"
+                break;
+            case "sauces":
+                header.innerHTML = "Выберите 3 бесплатных соуса по вкусу"
+                break;
+            case "fillings":
+                header.innerHTML = "Добавьте начинку по вкусу"
+                break;
+            case "finally":
+                header.innerHTML = "Проверьте и добавьте в корзину"
+                break;
 
-            console.log(data.sizes)
+        }
 
-            for (let i = 0; i < data.sizes.length; i++) {
-                productsList.innerHTML += data.sizes[i].name
+        productsList.innerHTML = ""
+
+        console.log(itemsData)
+
+        if (activeLi.id !== "finally") {
+            for (let item in itemsData) {
+                productsList.innerHTML +=
+                    `
+                    <article class="hystmodal__item">
+                        <div class="hystmodal__item__outer-circle">
+                            <div class="hystmodal__item__inner-circle">
+                                <img src="${itemsData[item].image}" alt="">
+                            </div>
+                        </div>
+                        <div class="hystmodal__item__name">
+                            <p>${itemsData[item].name}</p>
+                        </div>
+                        <p class="hystmodal__item__price">Цена: <span>${itemsData[item].price}</span> ₽</p>
+                    </article>
+                `
             }
-        })
+        }
     }
+
 
     let ul = document.querySelector(".hystmodal__stages")
     let btns = document.querySelector(".hystmodal__stages-buttons").children
@@ -62,7 +100,9 @@ const modalContentOpen = (target) => {
     let price = item.getElementsByClassName('item__price')[0].getElementsByTagName('span')[0].textContent
     console.log(price)
 
+
     modalButtonRender()
+    modalContentRender(0)
     btns[0].addEventListener('click', () => modalContentRender(-1))
     btns[1].addEventListener('click', () => modalContentRender(1))
 
