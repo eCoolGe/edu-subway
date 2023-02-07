@@ -1,6 +1,3 @@
-const JSON_PATH = "../assets/data.json";
-let cart = [];
-
 const pageContentRender = (target) => {
     let pageName = target.id
     let navChildren = target.parentElement.children
@@ -56,7 +53,10 @@ const pageContentRender = (target) => {
                                         ? `class="active"`
                                         : ``
                                     }
-                                    onclick="cartAdd(this)"
+                                    onclick="${pageName === "sandwiches" 
+                                                ? "modalContentOpen(this)" 
+                                                : "cartAdd(this)"
+                                            }"
                                 >
                                 ${inCart
                                     ? `УБРАТЬ`
@@ -70,17 +70,3 @@ const pageContentRender = (target) => {
         }
     })
 }
-
-const getJSON = async (url) => {
-    let response = await fetch(url)
-
-    if (response.ok) {
-        return await response.json()
-    } else {
-        alert("[Error]  URL: " + url + " | HTTP: " + response.status)
-        return response.status
-    }
-}
-
-
-

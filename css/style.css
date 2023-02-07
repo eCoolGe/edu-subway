@@ -12,6 +12,11 @@
                                   supported by Chrome, Edge, Opera and Firefox */
 }
 
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
 body {
     /*background-color: #ecebe9;*/
     background-image: url("../assets/bg.jpg");
@@ -394,12 +399,12 @@ body {
     color: #fff;
 }
 
-.hystmodal_stages-buttons {
+.hystmodal__stages-buttons {
     display: flex;
     justify-content: space-between;
 }
 
-.hystmodal_stages-buttons > button {
+.hystmodal__stages-buttons > button {
     width: 125px;
     font-weight: 700;
     color: #fff;

@@ -1,3 +1,5 @@
+let cart = [];
+
 const cartAdd = (target) => {
     let item = target.parentElement.parentElement
     let itemName = item.getElementsByClassName('item__name')[0].children[0].textContent

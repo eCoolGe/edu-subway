@@ -60,12 +60,12 @@
     </div>
 </section>
 
-<div class="hystmodal hystmodal--active" id="myModal" aria-hidden="true"> <!-- hystmodal--active -->
+<div class="hystmodal" id="myModal" aria-hidden="true"> <!-- hystmodal--active -->
     <div class="hystmodal__wrap">
         <div class="hystmodal__window" role="dialog" aria-modal="true">
             <div class="hystmodal__header">
                 Выберите размер сендвича
-                <button class="hystmodal__close"></button>
+                <button class="hystmodal__close" onclick="modalContentClose()"></button>
             </div>
             <div class="hystmodal__middle">
                 <ul class="hystmodal__stages">
@@ -76,9 +76,9 @@
                     <li>Начинка</li>
                     <li>Готово!</li>
                 </ul>
-                <div class="hystmodal_stages-buttons">
-                    <button>< НАЗАД</button>
-                    <button>ВПЕРЕД ></button>
+                <div class="hystmodal__stages-buttons">
+                    <button class="noselect" >< НАЗАД</button>
+                    <button class="noselect" >ВПЕРЕД ></button>
                 </div>
                 <div class="hystmodal__product-list">
                     <article class="hystmodal__item">
@@ -113,16 +113,22 @@
         <div class="hystmodal__plug noselect">●</div>
     </div>
 </div>
-<div class="hystmodal__shadow hystmodal__shadow--show"></div> <!-- hystmodal__shadow--show -->
+<div class="hystmodal__shadow"></div> <!-- hystmodal__shadow--show -->
 
 
 <section class="product-list">
 
 </section>
 
+<script>
+
+</script>
+
 <script src="js/counter.js"></script>
 <script src="js/cart.js"></script>
 <script src="js/pageContentRender.js"></script>
+<script src="js/modalContentRender.js"></script>
+<script src="js/getJSON.js"></script>
 
 </body>
 </html>
