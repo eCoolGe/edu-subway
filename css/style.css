@@ -78,13 +78,20 @@ body {
     display: flex;
 }
 
-.cart__header > svg {
-    fill: #fff;
+.cart__svg {
+    background-color: transparent;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border: none;
+    font-size: 0;
+    outline: none;
     height: 40px;
     width: 40px;
     margin: 10px auto;
     -webkit-filter: drop-shadow(0 0 3px rgba(0,0,0,30%));
     filter: drop-shadow(0 0 3px rgba(0,0,0,30%));
+    background-image: url("../assets/cart.svg");
 }
 
 .cart__header > h1 {
@@ -332,6 +339,7 @@ body {
     cursor: pointer;
     outline: none;
     opacity: 45%;
+
 }
 
 .hystmodal__wrap {
