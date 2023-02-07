@@ -1,11 +1,12 @@
 const cartAdd = (target) => {
-    let item = target.parentElement.parentElement
-    let itemName = item.getElementsByClassName('item__name')[0].children[0].textContent
+    const item = target.parentElement.parentElement
+    const itemName = item.getElementsByClassName('item__name')[0].children[0].textContent
     let itemCount;
     // let itemPrice = item.getElementsByClassName('item__price')[0].getElementsByTagName('span')[0].textContent
-    let itemPrice = menu[menu.findIndex(item => item.name === itemName)].price
-    let priceHolder = document.querySelector('#cartPrice')
-    let cartItems = document.querySelector(".cart__body__items")
+    const itemPriceIndex = menu.findIndex(item => item.name === itemName)
+    const itemPrice = menu[itemPriceIndex].price
+    const priceHolder = document.querySelector('#cartPrice')
+    const cartItems = document.querySelector(".cart__body__items")
 
     if (!cart.some(item => item.itemName === itemName)) {
         itemCount = item.getElementsByClassName('counter-block__counter')[0].getElementsByTagName('input')[0].value
@@ -24,13 +25,14 @@ const cartAdd = (target) => {
         priceHolder.innerHTML = (parseInt(priceHolder.textContent) + (parseInt(itemCount) * parseInt(itemPrice))).toString()
 
     } else {
-        itemCount = cart[cart.findIndex(item => item.itemName === itemName)].itemCount
+        const itemNameIndex = cart.findIndex(item => item.itemName === itemName)
+        itemCount = cart[itemNameIndex].itemCount
 
-        cart.splice(cart.findIndex(item => item.itemName === itemName), 1)
+        cart.splice(itemNameIndex, 1)
         target.classList.remove('active')
         target.innerHTML = "В КОРЗИНУ"
 
-        let cartChildren = cartItems.children
+        const cartChildren = cartItems.children
         for (let i = 0; i < cartChildren.length; i++) {
             if (cartChildren[i].children[0].textContent === itemName) cartChildren[i].remove()
         }

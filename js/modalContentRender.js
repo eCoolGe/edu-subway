@@ -36,8 +36,8 @@ const modalContentOpen = (target) => {
     }
 
     const modalContentRender = (pageInterval) => {
-        let productsList = document.querySelector(".hystmodal__product-list")
-        let header = document.querySelector(".hystmodal__header span")
+        const productsList = document.querySelector(".hystmodal__product-list")
+        const header = document.querySelector(".hystmodal__header span")
         let activeLi = document.getElementsByClassName('active')[0]
         ul.children[ulChildren.indexOf(activeLi)].classList.remove('active')
         ul.children[ulChildren.indexOf(activeLi) + pageInterval].classList.add('active')
@@ -93,11 +93,11 @@ const modalContentOpen = (target) => {
     }
 
 
-    let ul = document.querySelector(".hystmodal__stages")
-    let btns = document.querySelector(".hystmodal__stages-buttons").children
-    let ulChildren = Array.prototype.slice.call(ul.children)
-    let item = target.parentElement.parentElement
-    let price = item.getElementsByClassName('item__price')[0].getElementsByTagName('span')[0].textContent
+    const ul = document.querySelector(".hystmodal__stages")
+    const btns = document.querySelector(".hystmodal__stages-buttons").children
+    const ulChildren = Array.prototype.slice.call(ul.children)
+    const item = target.parentElement.parentElement
+    const price = item.getElementsByClassName('item__price')[0].getElementsByTagName('span')[0].textContent
     console.log(price)
 
 
