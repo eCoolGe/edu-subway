@@ -1,10 +1,9 @@
-let cart = [];
-
 const cartAdd = (target) => {
     let item = target.parentElement.parentElement
     let itemName = item.getElementsByClassName('item__name')[0].children[0].textContent
     let itemCount;
-    let itemPrice = item.getElementsByClassName('item__price')[0].getElementsByTagName('span')[0].textContent
+    // let itemPrice = item.getElementsByClassName('item__price')[0].getElementsByTagName('span')[0].textContent
+    let itemPrice = menu[menu.findIndex(item => item.name === itemName)].price
     let priceHolder = document.querySelector('#cartPrice')
     let cartItems = document.querySelector(".cart__body__items")
 

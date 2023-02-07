@@ -1,4 +1,6 @@
 const JSON_PATH = "../assets/data.json";
+let storage, menu;
+let cart = [];
 
 const getJSON = async (url) => {
     let response = await fetch(url)
@@ -10,3 +12,9 @@ const getJSON = async (url) => {
         return response.status
     }
 }
+
+getJSON(JSON_PATH).then(data => {
+    storage = data
+    menu = data.menu
+    pageContentRender(document.getElementById("sandwiches"))
+})
