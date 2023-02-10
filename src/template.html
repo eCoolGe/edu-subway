@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subway</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="main-text">СДЕЛАЙТЕ ЗАКАЗ НАПРЯМУЮ ИЗ РЕСТОРАНА</header>
+<section class="left-menu">
+    <nav class="navbar">
+        <a id="pizza" href="#">Пиццы</a> <!-- Блины -->
+        <a id="shaurma" href="#">Шаурма</a>
+        <a id="sandwiches" href="#">Сендвичи</a>
+        <a id="burgers" href="#">Бургеры</a>
+        <a id="chicken" href="#">Курица & Картофель</a>
+        <a id="salads" href="#">Тортилья & Салаты</a>
+        <a id="drinks" href="#">Напитки & Десерты</a>
+    </nav>
+    <div class="cart">
+        <div class="cart__header">
+            <div class="cart__svg"></div>
+            <h1>Корзина</h1>
+        </div>
+        <div class="cart__body">
+            <div class="cart__body__subtitle">
+                <span>Название</span>
+                <span>Количество</span>
+            </div>
+            <div class="cart__body__items">
+
+            </div>
+            <p>Итого: <span id="cartPrice">0</span> ₽</p>
+            <button>ОФОРМИТЬ ЗАКАЗ</button>
+        </div>
+    </div>
+</section>
+
+<section class="product-list"></section>
+
+<section>
+    <div class="hystmodal" id="myModal" aria-hidden="true">
+        <div class="hystmodal__wrap">
+            <div class="hystmodal__window" role="dialog" aria-modal="true">
+                <div class="hystmodal__header">
+                    <span>Выберите размер сендвича</span>
+                    <button class="hystmodal__close"></button>
+                </div>
+                <div class="hystmodal__middle">
+                    <ul class="hystmodal__stages">
+                        <li id="sizes" class="active">Размер</li>
+                        <li id="breads">Хлеб</li>
+                        <li id="vegetables">Овощи</li>
+                        <li id="sauces">Соусы</li>
+                        <li id="fillings">Начинка</li>
+                        <li id="finally">Готово!</li>
+                    </ul>
+                    <div class="hystmodal__stages-buttons">
+                        <button class="noselect">< НАЗАД</button>
+                        <button class="noselect">ВПЕРЕД ></button>
+                    </div>
+                    <div class="hystmodal__product-list"></div>
+                </div>
+                <div class="hystmodal__footer">
+                    Итого: 110 ₽
+                </div>
+            </div>
+            <div class="hystmodal__plug noselect">●</div>
+        </div>
+    </div>
+    <div class="hystmodal__shadow"></div>
+</section>
+</body>
+</html>
