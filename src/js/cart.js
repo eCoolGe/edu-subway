@@ -1,4 +1,6 @@
-const cartAdd = (target) => {
+import {cart, menu} from "./index";
+
+export const cartAdd = (target) => {
     const item = target.parentElement.parentElement
     const itemName = item.getElementsByClassName('item__name')[0].children[0].textContent
     let itemCount;

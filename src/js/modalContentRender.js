@@ -1,11 +1,14 @@
-const modalContentOpen = (target) => {
+import {storage} from "./index";
+let overlayChecker = false;
+
+export const modalContentOpen = (target) => {
     document.addEventListener('mousedown', function (e) {
         /**
          * Проверяем было ли нажатие над .hystmodal__wrap,
          * и отмечаем это в свойстве this._overlayChecker
          */
         if (!e.target.classList.contains('hystmodal__wrap')) return;
-        this._overlayChecker = true;
+        overlayChecker = true;
     }.bind(this));
 
     document.addEventListener('mouseup', function (e) {
@@ -14,12 +17,12 @@ const modalContentOpen = (target) => {
          * и если нажатие тоже было на нём, то закрываем окно
          * и обнуляем this._overlayChecker в любом случае
          */
-        if (this._overlayChecker && e.target.classList.contains('hystmodal__wrap')) {
+        if (overlayChecker && e.target.classList.contains('hystmodal__wrap')) {
             e.preventDefault();
             modalContentClose()
             return;
         }
-        this._overlayChecker = false;
+        overlayChecker = false;
     }.bind(this));
 
     const modalButtonRender = () => {
@@ -65,7 +68,6 @@ const modalContentOpen = (target) => {
             case "finally":
                 header.innerHTML = "Проверьте и добавьте в корзину"
                 break;
-
         }
 
         productsList.innerHTML = ""
@@ -79,7 +81,7 @@ const modalContentOpen = (target) => {
                     <article class="hystmodal__item">
                         <div class="hystmodal__item__outer-circle">
                             <div class="hystmodal__item__inner-circle">
-                                <img src="${itemsData[item].image}" alt="">
+                                <img src=${require(`../assets${itemsData[item].image}`)} alt="">
                             </div>
                         </div>
                         <div class="hystmodal__item__name">
@@ -92,7 +94,6 @@ const modalContentOpen = (target) => {
         }
     }
 
-
     const ul = document.querySelector(".hystmodal__stages")
     const btns = document.querySelector(".hystmodal__stages-buttons").children
     const ulChildren = Array.prototype.slice.call(ul.children)
@@ -100,21 +101,19 @@ const modalContentOpen = (target) => {
     const price = item.getElementsByClassName('item__price')[0].getElementsByTagName('span')[0].textContent
     console.log(price)
 
-
     modalButtonRender()
     modalContentRender(0)
     btns[0].addEventListener('click', () => modalContentRender(-1))
     btns[1].addEventListener('click', () => modalContentRender(1))
-
 
     document.getElementsByClassName("hystmodal")[0].classList.add("hystmodal--active")
     document.getElementsByClassName("hystmodal__shadow")[0].classList.add("hystmodal__shadow--show")
     document.querySelector("body").classList.add("modal-open")
 }
 
-const modalContentClose = () => {
+
+export const modalContentClose = () => {
     document.getElementsByClassName("hystmodal")[0].classList.remove("hystmodal--active")
     document.getElementsByClassName("hystmodal__shadow")[0].classList.remove("hystmodal__shadow--show")
     document.querySelector("body").classList.remove("modal-open")
 }
-
