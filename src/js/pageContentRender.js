@@ -25,7 +25,7 @@ export async function pageContentRender(target) {
             const marketImageHTML = marketImage ? `<img class="item__shop-logo" src=${require(`../assets${marketImage}`)} />` : ``
 
             const inCart = cart.some(item => item.itemName === product.name)
-            const btnClasses = inCart ? `class="active"` : ``
+            const btnActive = inCart ? `class="active"` : ``
             const btnText = inCart ? `УБРАТЬ` : `В КОРЗИНУ`
             const countIndex = cart.findIndex(item => item.itemName === product.name)
             const inputValue = inCart ? cart[countIndex].itemCount : '1'
@@ -51,25 +51,27 @@ export async function pageContentRender(target) {
                             <div class="counter-block__counter">
                                 <span class="counter__minus">—</span>
                                 <label>
-                                    <input id="counterInput${i}" type="text" value="${inputValue}"/>
+                                    <input class="counter__input" id="counterInput${i}" type="text" value="${inputValue}"/>
                                 </label>
                                 <span class="counter__plus">+</span>
                             </div>
-                            <button id="itemButton" ${btnClasses}>${btnText}</button>
+                            <button class="item__button" ${btnActive}>${btnText}</button>
                         </div>
                     </article>
                 `;
-
-            const btn = document.getElementById(`itemButton`)
-            if (pageName === "sandwiches")
-                btn.addEventListener('click', (e) => modalContentOpen(e.target))
-            else
-                btn.addEventListener('click', (e) => cartAdd(e.target))
-
-            //pageName === "sandwiches" ? btn.addEventListener('click', (e) => modalContentOpen(e.target)) : btn.addEventListener('click', (e) => cartAdd(e.target))
-            document.getElementsByClassName('counter__minus')[0].addEventListener('click', (e) => counterDecrement(e.target))
-            document.getElementsByClassName('counter__plus')[0].addEventListener('click', (e) => counterIncrement(e.target))
-            document.getElementById(`counterInput${i}`).addEventListener('input', (e) => counterChange(e.target))
         }
     }
+
+    document.querySelectorAll(".item__button").forEach(elem => {
+        if (pageName === "sandwiches")
+            elem.addEventListener('click', (e) => modalContentOpen(e.target))
+        else
+            elem.addEventListener('click', (e) => cartAdd(e.target))
+    })
+    document.querySelectorAll(".counter__minus").forEach(elem => elem
+        .addEventListener('click', (e) => counterDecrement(e.target)))
+    document.querySelectorAll(".counter__input").forEach(elem => elem
+        .addEventListener('input', (e) => counterChange(e.target)))
+    document.querySelectorAll(".counter__plus").forEach(elem => elem
+        .addEventListener('click', (e) => counterIncrement(e.target)))
 }
