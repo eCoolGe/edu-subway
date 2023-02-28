@@ -436,13 +436,13 @@ body {
     padding: 20px 0 15px 0;
 }
 
-.hystmodal__item:hover {
+.hystmodal__item:hover, .hystmodal_selected {
     background-color: #f6d846;
     border-radius: 3px;
     box-shadow: 0 0 4px rgb(0 0 0 / 40%);
 }
 
-.hystmodal__item:hover > .hystmodal__item__outer-circle {
+.hystmodal__item:hover > .hystmodal__item__outer-circle, .hystmodal_selected > .hystmodal__item__outer-circle {
     background: #fff;
 }
 
