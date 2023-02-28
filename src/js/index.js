@@ -8,12 +8,8 @@ export let cart = []
 
 import {pageContentRender} from "./pageContentRender";
 
-document.getElementById('pizza').addEventListener('click', (e) => pageContentRender(e.target))
-document.getElementById('shaurma').addEventListener('click', (e) => pageContentRender(e.target))
-document.getElementById('sandwiches').addEventListener('click', (e) => pageContentRender(e.target))
-document.getElementById('burgers').addEventListener('click', (e) => pageContentRender(e.target))
-document.getElementById('chicken').addEventListener('click', (e) => pageContentRender(e.target))
-document.getElementById('salads').addEventListener('click', (e) => pageContentRender(e.target))
-document.getElementById('drinks').addEventListener('click', (e) => pageContentRender(e.target))
+const navbar = document.querySelector(".navbar")
+Array.from(navbar.children)
+    .forEach(elem => elem.addEventListener('click', ({target}) => pageContentRender(target)))
 
 setTimeout(() => pageContentRender(document.getElementById("sandwiches")), 200)
