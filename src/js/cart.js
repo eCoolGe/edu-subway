@@ -1,19 +1,24 @@
 import {cart, menu} from "./index";
 
-export const cartAdd = (target) => {
+export const cartAdd = (target, itemCount = 0, itemPrice = 0) => {
     const item = target.parentElement.parentElement
     const itemName = item.getElementsByClassName('item__name')[0].children[0].textContent
-    let itemCount;
+    //let itemCount;
     // let itemPrice = item.getElementsByClassName('item__price')[0].getElementsByTagName('span')[0].textContent
     const itemPriceIndex = menu.findIndex(item => item.name === itemName)
-    const itemPrice = menu[itemPriceIndex].price
+    if (itemPrice === 0)
+        itemPrice = menu[itemPriceIndex].price
     const priceHolder = document.querySelector('#cartPrice')
     const cartItems = document.querySelector(".cart__body__items")
+    const counterInputElement = item.getElementsByClassName('counter-block__counter')[0].getElementsByTagName('input')[0]
 
     if (!cart.some(item => item.itemName === itemName)) {
-        itemCount = item.getElementsByClassName('counter-block__counter')[0].getElementsByTagName('input')[0].value
+        if (itemCount === 0)
+            itemCount = counterInputElement.value
+        else
+            counterInputElement.value = itemCount
 
-        cart.push({'itemName': itemName, 'itemCount': itemCount})
+        cart.push({'itemName': itemName, 'itemCount': itemCount, 'itemPrice': itemPrice})
         target.classList.add('active')
         target.innerHTML = "УБРАТЬ"
 
@@ -29,6 +34,7 @@ export const cartAdd = (target) => {
     } else {
         const itemNameIndex = cart.findIndex(item => item.itemName === itemName)
         itemCount = cart[itemNameIndex].itemCount
+        itemPrice = cart[itemNameIndex].itemPrice
 
         cart.splice(itemNameIndex, 1)
         target.classList.remove('active')

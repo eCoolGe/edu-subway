@@ -288,7 +288,7 @@ body {
     vertical-align: middle;
 }
 
-.item__counter-block > button {
+.item__button {
     width: 140px;
     font-weight: 700;
     color: #fff;
@@ -502,6 +502,40 @@ body {
     font-weight: 500;
     margin: 5px auto;
     color: #d96746;
+}
+
+.hystmodal__finally {
+    display: inline-flex;
+    width: 100%;
+}
+
+.hystmodal__finally__image {
+    width: 33%;
+    display: flex;
+}
+
+.hystmodal__finally__image > .hystmodal__item__outer-circle {
+    align-self: center;
+}
+
+.hystmodal__finally__text {
+    font-size: 25px;
+    font-weight: 500;
+    width: 66%;
+}
+
+.hystmodal__finally__text__upper {
+    margin: 0;
+}
+
+.hystmodal__finally__text > div {
+    border-top: 2px solid #444444;
+    border-bottom: 2px solid #444444;
+}
+
+.hystmodal__finally__text > div > p {
+    margin: 10px 0;
+    font-size: 15px;
 }
 
 

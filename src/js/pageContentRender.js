@@ -1,7 +1,7 @@
 import {cart, storage} from "./index";
 import {counterChange, counterDecrement, counterIncrement} from "./counter"
 import {cartAdd} from "./cart";
-import {modalContentOpen} from "./modalContentRender";
+import {modalOpenOrCartRemove} from "./modalContentRender";
 
 export async function pageContentRender(target) {
     const pageName = target.id
@@ -25,7 +25,7 @@ export async function pageContentRender(target) {
             const marketImageHTML = marketImage ? `<img class="item__shop-logo" src=${require(`../assets${marketImage}`)} />` : ``
 
             const inCart = cart.some(item => item.itemName === product.name)
-            const btnActive = inCart ? `class="active"` : ``
+            const btnActive = inCart ? `active` : ``
             const btnText = inCart ? `УБРАТЬ` : `В КОРЗИНУ`
             const countIndex = cart.findIndex(item => item.itemName === product.name)
             const inputValue = inCart ? cart[countIndex].itemCount : '1'
@@ -55,7 +55,7 @@ export async function pageContentRender(target) {
                                 </label>
                                 <span class="counter__plus">+</span>
                             </div>
-                            <button class="item__button" ${btnActive}>${btnText}</button>
+                            <button class="item__button ${btnActive}">${btnText}</button>
                         </div>
                     </article>
                 `;
@@ -64,7 +64,7 @@ export async function pageContentRender(target) {
 
     document.querySelectorAll(".item__button").forEach(elem => {
         if (pageName === "sandwiches")
-            elem.addEventListener('click', (e) => modalContentOpen(e.target))
+            elem.addEventListener('click', (e) => modalOpenOrCartRemove(e.target))
         else
             elem.addEventListener('click', (e) => cartAdd(e.target))
     })

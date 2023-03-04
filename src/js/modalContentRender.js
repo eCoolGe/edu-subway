@@ -1,202 +1,278 @@
-import {cart, menu, storage} from "./index";
-import {counterDecrement} from "./counter";
-let overlayChecker = false;
+import {menu, storage} from "./index";
+import {counterChange, counterDecrement, counterIncrement} from "./counter";
+import {cartAdd} from "./cart";
 
-export const modalContentOpen = (target) => {
-    const modal = document.querySelector(".hystmodal__wrap")
-    modal.innerHTML =
-        `
-        <div class="hystmodal__window" role="dialog" aria-modal="true">
-                <div class="hystmodal__header">
-                    <span>Выберите размер сендвича</span>
-                    <button class="hystmodal__close"></button>
-                </div>
-                <div class="hystmodal__middle">
-                    <ul class="hystmodal__stages">
-                        <li id="size" class="active">Размер</li>
-                        <li id="bread">Хлеб</li>
-                        <li id="vegetable">Овощи</li>
-                        <li id="sauce">Соусы</li>
-                        <li id="filling">Начинка</li>
-                        <li id="finally">Готово!</li>
-                    </ul>
-                    <div class="hystmodal__stages-buttons">
-                        <button class="noselect">< НАЗАД</button>
-                        <button class="noselect">ВПЕРЕД ></button>
-                    </div>
-                    <div class="hystmodal__product-list"></div>
-                </div>
-                <div class="hystmodal__footer">
-                    Итого: <span id="compositePrice">0</span> ₽
-                </div>
-            </div>
-            <div class="hystmodal__plug noselect">●</div>
-        `
-    document.getElementsByClassName('hystmodal__close')[0].addEventListener('click', () => modalContentClose())
+export const modalOpenOrCartRemove = (target) => {
+    if (!target.classList.contains("active"))
+        modalOpen(target)
+    else
+        cartAdd(target)
+}
+
+const modalOpen = (target) => {
+    let overlayChecker = false;
+
+    const modalElement = document.querySelector(".hystmodal__wrap")
+    const modalContentDictionary = [
+        {id: "size", headerText: "Выберите размер сендвича", selectLimit: 1},
+        {id: "bread", headerText: "Хлеб для сендвича на выбор", selectLimit: 1},
+        {id: "vegetable", headerText: "Дополнительные овощи бесплатно", selectLimit: 99},
+        {id: "sauce", headerText: "Выберите 3 бесплатных соуса по вкусу", selectLimit: 3},
+        {id: "filling", headerText: "Добавьте начинку по вкусу", selectLimit: 99},
+        {id: "finally", headerText: "Проверьте и добавьте в корзину", selectLimit: 0}
+    ]
+    const itemElement = target.parentElement.parentElement
+    const itemName = itemElement.getElementsByClassName('item__name')[0].children[0].textContent
+    const counterInputElement = itemElement.getElementsByClassName('counter-block__counter')[0].getElementsByTagName('input')[0]
+    const itemMenuIndex = menu.findIndex(item => item.name === itemName)
+    const itemPrice = menu[itemMenuIndex].price
+    const itemImage = menu[itemMenuIndex].image
+
+
+    //const cartComponents = Object.assign({}, menu[itemMenuIndex].components);
+    const cartComponents = structuredClone(menu[itemMenuIndex].components)
 
     document.addEventListener('mousedown', function (e) {
-        /**
-         * Проверяем было ли нажатие над .hystmodal__wrap,
-         * и отмечаем это в свойстве this._overlayChecker
-         */
         if (!e.target.classList.contains('hystmodal__wrap')) return;
         overlayChecker = true;
     }.bind(this));
 
     document.addEventListener('mouseup', function (e) {
-        /**
-         * Проверяем было ли отпускание мыши над .hystmodal__wrap,
-         * и если нажатие тоже было на нём, то закрываем окно
-         * и обнуляем this._overlayChecker в любом случае
-         */
         if (overlayChecker && e.target.classList.contains('hystmodal__wrap')) {
             e.preventDefault();
-            modalContentClose()
+            modalClose()
             return;
         }
         overlayChecker = false;
     }.bind(this));
 
-    const modalButtonRender = () => {
-        if (ul.firstElementChild.classList.contains('active')) {
-            btns[0].classList.add('hidden')
-            btns[1].classList.remove('hidden')
-        } else if (ul.lastElementChild.classList.contains('active')) {
-            btns[1].classList.add('hidden')
-            btns[0].classList.remove('hidden')
-        } else {
-            btns[0].classList.remove('hidden')
-            btns[1].classList.remove('hidden')
-        }
-    }
+    const modalContent = (pageId = 0) => {
+        const itemSelected = (targetItemElement, selectLimit) => {
+            while (!targetItemElement.classList.contains("hystmodal__item"))
+                targetItemElement = targetItemElement.parentElement
 
-    const item = target.parentElement.parentElement
-    const itemName = item.getElementsByClassName('item__name')[0].children[0].textContent
-    const itemPriceIndex = menu.findIndex(item => item.name === itemName)
-    const itemPrice = menu[itemPriceIndex].price
-    const compositePrice = document.querySelector("#compositePrice")
-    let cartComponents = menu[itemPriceIndex].components
-    compositePrice.innerHTML = itemPrice
-    let finallyPrice;
-
-    const modalContentRender = (pageInterval) => {
-        const itemSelected = (target, limiter = 1) => {
-            while (!target.classList.contains("hystmodal__item"))
-                target = target.parentElement
-            let selected = target.parentElement.querySelectorAll(".hystmodal_selected")
-
-            if (limiter === 1) {
-                selected.forEach(elem => elem.classList.remove("hystmodal_selected"))
-                target.classList.add("hystmodal_selected")
-                cartComponents[activeLi.id] = target.id
+            if (selectLimit === 1) {
+                cartComponents[pageTextId] = targetItemElement.id
 
             } else {
-                if (selected.length < limiter && !target.classList.contains("hystmodal_selected")) {
-                    target.classList.add("hystmodal_selected")
-                    cartComponents[activeLi.id].push(target.id)
-                } else {
-                    target.classList.remove("hystmodal_selected")
-                    let targetIndex = cartComponents[activeLi.id].findIndex(item => item === target.id)
-                    cartComponents[activeLi.id].splice(targetIndex, 1)
-                }
-            }
-            finallyPrice = itemPrice
-            for (let elem in cartComponents) {
-                if(!Array.isArray(cartComponents[elem]))
-                    finallyPrice += storage[`${elem}s`][cartComponents[elem]].price
-                else if (cartComponents[elem].length > 0) {
-                    cartComponents[elem].forEach(element => finallyPrice += storage[`${elem}s`][element].price)
-                }
+                const itemCartIndex = cartComponents[pageTextId].findIndex(elem => elem === targetItemElement.id)
 
+                if (cartComponents[pageTextId].length < selectLimit && itemCartIndex === -1)
+                    cartComponents[pageTextId].push(targetItemElement.id)
+                else if (itemCartIndex !== -1)
+                    cartComponents[pageTextId].splice(itemCartIndex, 1)
             }
-            compositePrice.innerHTML = finallyPrice
+            modalContent(pageId)
         }
 
-        const productsList = document.querySelector(".hystmodal__product-list")
-        const header = document.querySelector(".hystmodal__header span")
-        let activeLi = document.getElementsByClassName('active')[0]
-        ul.children[ulChildren.indexOf(activeLi)].classList.remove('active')
-        ul.children[ulChildren.indexOf(activeLi) + pageInterval].classList.add('active')
-        modalButtonRender()
+        const calculateCartPrice = (startPrice) => {
+            let calculatedPrice = startPrice
+            for (let component in cartComponents) {
+                const itemValue = cartComponents[component]
+                const storageValues = storage[`${component}s`]
 
-        activeLi = document.getElementsByClassName('active')[0]
-        let itemsData = storage[`${activeLi.id}s`]
+                if (!Array.isArray(itemValue))
+                    calculatedPrice += storageValues[itemValue].price
+                else {
+                    itemValue.forEach(elem => calculatedPrice += storageValues[elem].price)
+                }
+            }
+            return calculatedPrice
+        }
 
-        productsList.innerHTML = ""
-        console.log(cartComponents)
+        const cartIdToText = () => {
+            const obj = {}
+            for (let component in cartComponents) {
+                const itemValue = cartComponents[component]
+                const storageValues = storage[`${component}s`]
+                console.log(component)
 
-        if (activeLi.id !== "finally") {
+                if (!Array.isArray(itemValue))
+                    obj[component] = storageValues[itemValue].name
+                else {
+                    obj[component] = []
+                    itemValue.forEach(elem => obj[component].push(storageValues[elem].name))
+                    if (obj[component].length === 0)
+                        obj[component] = ["Нет"]
+                }
+            }
+            return obj
+        }
+
+        const headerText = modalContentDictionary[pageId]["headerText"]
+        const backButtonVisible = pageId === 0 ? "hidden" : ""
+        const nextButtonVisible = pageId === modalContentDictionary.length - 1 ? "hidden" : ""
+        const pageTextId = modalContentDictionary[pageId]["id"]
+
+        if (pageId !== modalContentDictionary.length - 1) {
+            modalElement.innerHTML =
+                `
+                    <div class="hystmodal__window" role="dialog" aria-modal="true">
+                        <div class="hystmodal__header">
+                            <span>${headerText}</span>
+                            <button id="modalClose" class="hystmodal__close"></button>
+                        </div>
+                        <div class="hystmodal__middle">
+                            <ul class="hystmodal__stages">
+                                <li id="size">Размер</li>
+                                <li id="bread">Хлеб</li>
+                                <li id="vegetable">Овощи</li>
+                                <li id="sauce">Соусы</li>
+                                <li id="filling">Начинка</li>
+                                <li id="finally">Готово!</li>
+                            </ul>
+                            <div class="hystmodal__stages-buttons">
+                                <button id="backButton" class="noselect ${backButtonVisible}">< НАЗАД</button>
+                                <button id="nextButton" class="noselect ${nextButtonVisible}">ВПЕРЕД ></button>
+                            </div>
+                            <div class="hystmodal__product-list"></div>
+                        </div>
+                        <div class="hystmodal__footer">
+                            Итого: <span id="finallyPrice">0</span> ₽
+                        </div>
+                    </div>
+                    <div class="hystmodal__plug noselect">●</div>
+                `
+
+            const productsListElement = document.querySelector(".hystmodal__product-list")
+            const itemsData = storage[`${pageTextId}s`]
+
             for (let item in itemsData) {
-                let itemClassSelected;
-                if (!Array.isArray(cartComponents[activeLi.id]))
-                    itemClassSelected = item === cartComponents[activeLi.id] ? `hystmodal_selected` : ""
-                else
-                    itemClassSelected = cartComponents[activeLi.id].includes(item) ? `hystmodal_selected` : ""
+                const sizePrice = pageId === 0 ? itemsData[item].price + itemPrice : itemsData[item].price
 
-                const productListPrice = activeLi.id === "size" ? itemPrice + itemsData[item].price : itemsData[item].price
+                let itemClassSelected = "";
+                if (!Array.isArray(cartComponents[pageTextId]) && item === cartComponents[pageTextId] ||
+                    Array.isArray(cartComponents[pageTextId]) && cartComponents[pageTextId].includes(item)) {
+                    itemClassSelected = `hystmodal_selected`
 
-                productsList.innerHTML +=
+                }
+
+                productsListElement.innerHTML +=
                     `
-                    <article id="${item}" class="hystmodal__item ${itemClassSelected}">
-                        <div class="hystmodal__item__outer-circle">
-                            <div class="hystmodal__item__inner-circle">
-                                <img src=${require(`../assets${itemsData[item].image}`)} alt="">
+                        <article id="${item}" class="hystmodal__item ${itemClassSelected}">
+                            <div class="hystmodal__item__outer-circle">
+                                <div class="hystmodal__item__inner-circle">
+                                    <img src=${require(`../assets${itemsData[item].image}`)} alt="">
+                                </div>
+                            </div>
+                            <div class="hystmodal__item__name">
+                                <p>${itemsData[item].name}</p>
+                            </div>
+                            <p class="hystmodal__item__price">Цена: <span>${sizePrice}</span> ₽</p>
+                        </article>
+                    `
+            }
+        } else {
+            const cartTextComponents = cartIdToText()
+
+
+            
+
+            modalElement.innerHTML =
+                `
+                    <div class="hystmodal__window" role="dialog" aria-modal="true">
+                        <div class="hystmodal__header">
+                            <span>${headerText}</span>
+                            <button id="modalClose" class="hystmodal__close"></button>
+                        </div>
+                        <div class="hystmodal__middle">
+                            <ul class="hystmodal__stages">
+                                <li id="size">Размер</li>
+                                <li id="bread">Хлеб</li>
+                                <li id="vegetable">Овощи</li>
+                                <li id="sauce">Соусы</li>
+                                <li id="filling">Начинка</li>
+                                <li id="finally">Готово!</li>
+                            </ul>
+                            <div class="hystmodal__stages-buttons">
+                                <button id="backButton" class="noselect ${backButtonVisible}">< НАЗАД</button>
+                                <button id="nextButton" class="noselect ${nextButtonVisible}">ВПЕРЕД ></button>
+                            </div>
+                            <div class="hystmodal__product-list"></div>
+                            
+                            <div class="hystmodal__finally">
+                                <div class="hystmodal__finally__image">
+                                    <div class="hystmodal__item__outer-circle">
+                                            <div class="hystmodal__item__inner-circle">
+                                                <img src=${require(`../assets${itemImage}`)} alt="">
+                                            </div>
+                                    </div>
+                                </div>
+                                <div class="hystmodal__finally__text">
+                                    <p class="hystmodal__finally__text__upper">Ваш сендвич готов!</p>
+                                        <div>
+                                            <p>Размер: ${cartTextComponents['size']}</p>
+                                            <p>Хлеб: ${cartTextComponents['bread']}</p>
+                                            <p>Овощи: ${cartTextComponents['vegetable']}</p>
+                                            <p>Соусы: ${cartTextComponents['sauce']}</p>
+                                            <p>Начинка: ${cartTextComponents['filling']}</p>
+                                        </div>
+                                    <p>${itemName}</p>
+                                </div>
                             </div>
                         </div>
-                        <div class="hystmodal__item__name">
-                            <p>${itemsData[item].name}</p>
+                        <div class="hystmodal__footer">
+                            <div class="item__counter-block noselect">
+                                <p>КОЛИЧЕСТВО</p>
+                                <div class="counter-block__counter">
+                                    <span id="modalCounterMinus" class="counter__minus">—</span>
+                                    <label>
+                                        <input class="counter__input" id="modalCounterInput" type="text" value="${counterInputElement.value}"/>
+                                    </label>
+                                    <span id="modalCounterPlus" class="counter__plus">+</span>
+                                </div>
+                            </div>
+                        
+                        
+                            Итого: <span id="finallyPrice">0</span> ₽
+                            
+                            <button id="modalCartButton" class="item__button">В КОРЗИНУ</button>
                         </div>
-                        <p class="hystmodal__item__price">Цена: <span>${productListPrice}</span> ₽</p>
-                    </article>
+                    </div>
+                    <div class="hystmodal__plug noselect">●</div>
                 `
-            }
 
-            let limit = 1;
-            switch (activeLi.id) {
-                case "size":
-                    header.innerHTML = "Выберите размер сендвича"
-                    break;
-                case "bread":
-                    header.innerHTML = "Хлеб для сендвича на выбор"
-                    break;
-                case "vegetable":
-                    limit = 99
-                    header.innerHTML = "Дополнительные овощи бесплатно"
-                    break;
-                case "sauce":
-                    header.innerHTML = "Выберите 3 бесплатных соуса по вкусу"
-                    limit = 3
-                    break;
-                case "filling":
-                    limit = 99
-                    header.innerHTML = "Добавьте начинку по вкусу"
-                    break;
-                case "finally":
-                    header.innerHTML = "Проверьте и добавьте в корзину"
-                    break;
-            }
+            const counterInputModalElement = document.getElementById("modalCounterInput");
 
-            document.querySelectorAll(".hystmodal__item").forEach(elem => elem
-                .addEventListener('click', ({target}) => itemSelected(target, limit)))
+            document.getElementById("modalCounterMinus")
+                .addEventListener('click', (e) => counterDecrement(e.target))
+            document.getElementById("modalCounterInput")
+                .addEventListener('input', (e) => counterChange(e.target))
+            document.getElementById("modalCounterPlus")
+                .addEventListener('click', (e) => counterIncrement(e.target))
+            document.getElementById("modalCartButton")
+                .addEventListener('click', (e) =>
+                {
+                    const itemCount = counterInputModalElement.value;
+                    cartAdd(target, itemCount, calculateCartPrice(itemPrice))
+                    modalClose()
+                })
         }
-    }
-    const ul = document.querySelector(".hystmodal__stages")
-    const btns = document.querySelector(".hystmodal__stages-buttons").children
-    const ulChildren = Array.prototype.slice.call(ul.children)
 
-    modalButtonRender()
-    modalContentRender(0)
-    btns[0].addEventListener('click', () => modalContentRender(-1))
-    btns[1].addEventListener('click', () => modalContentRender(1))
+        const finallyPriceElement = document.querySelector("#finallyPrice")
+        finallyPriceElement.innerHTML = calculateCartPrice(itemPrice)
+
+        document.querySelectorAll(".hystmodal__item").forEach(elem => elem
+            .addEventListener('click', ({target}) =>
+                itemSelected(target, modalContentDictionary[pageId]["selectLimit"])))
+        document.getElementsByClassName("hystmodal__stages")[0].children[pageId].classList.add("active")
+        document.getElementById("modalClose").addEventListener('click', () => modalClose())
+        document.getElementById("backButton").addEventListener('click', () => modalContent(pageId - 1))
+        document.getElementById("nextButton").addEventListener('click', () => modalContent(pageId + 1))
+    }
+
+    modalContent()
 
     document.getElementsByClassName("hystmodal")[0].classList.add("hystmodal--active")
     document.getElementsByClassName("hystmodal__shadow")[0].classList.add("hystmodal__shadow--show")
     document.querySelector("body").classList.add("modal-open")
+
+    const modalClose = () => {
+        document.getElementsByClassName("hystmodal")[0].classList.remove("hystmodal--active")
+        document.getElementsByClassName("hystmodal__shadow")[0].classList.remove("hystmodal__shadow--show")
+        document.querySelector("body").classList.remove("modal-open")
+        modalElement.innerHTML = ""
+    }
 }
 
 
-export const modalContentClose = () => {
-    document.getElementsByClassName("hystmodal")[0].classList.remove("hystmodal--active")
-    document.getElementsByClassName("hystmodal__shadow")[0].classList.remove("hystmodal__shadow--show")
-    document.querySelector("body").classList.remove("modal-open")
-}
