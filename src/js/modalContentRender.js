@@ -28,8 +28,6 @@ const modalOpen = (target) => {
     const itemPrice = menu[itemMenuIndex].price
     const itemImage = menu[itemMenuIndex].image
 
-
-    //const cartComponents = Object.assign({}, menu[itemMenuIndex].components);
     const cartComponents = structuredClone(menu[itemMenuIndex].components)
 
     document.addEventListener('mousedown', function (e) {

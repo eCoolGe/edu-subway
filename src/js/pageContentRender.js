@@ -15,13 +15,11 @@ export async function pageContentRender(target) {
     const productsList = document.querySelector(".product-list")
 
     productsList.innerHTML = ""
-// storage.menu.length
     for (let i = 0; i < storage.menu.length; i++) {
         const product = storage.menu[i]
 
         if (product.category === pageName) {
             const marketImage = storage.markets[product.market]?.image
-            // const marketImageHTML = marketImage ? `<img class="item__shop-logo" src="${marketImage}" alt="">` : ``
             const marketImageHTML = marketImage ? `<img class="item__shop-logo" src=${require(`../assets${marketImage}`)} />` : ``
 
             const inCart = cart.some(item => item.itemName === product.name)

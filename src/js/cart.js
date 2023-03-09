@@ -3,8 +3,6 @@ import {cart, menu} from "./index";
 export const cartAdd = (target, itemCount = 0, itemPrice = 0) => {
     const item = target.parentElement.parentElement
     const itemName = item.getElementsByClassName('item__name')[0].children[0].textContent
-    //let itemCount;
-    // let itemPrice = item.getElementsByClassName('item__price')[0].getElementsByTagName('span')[0].textContent
     const itemPriceIndex = menu.findIndex(item => item.name === itemName)
     if (itemPrice === 0)
         itemPrice = menu[itemPriceIndex].price
